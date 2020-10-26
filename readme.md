@@ -8,13 +8,13 @@ Und vergessen Sie nicht Ihre Lösung mit `git push` auch an unseren Server zu se
 
 Bitte füllen Sie und Ihr Gruppenpartner die folgenden Informationen sorgfältig aus:
 
-- Gruppe: 1A
+- Gruppe: 2B
 
 Studierender A
-- Vorname: Shinji
-- Nachname: Ikari
-- Matrikelnummer: 1337
-- Studiengang: Informatik
+- Vorname: Joseph Loic
+- Nachname: Bisso-Bi-Ela
+- Matrikelnummer: 4996512
+- Studiengang: Maschinenbau
 - Geplanter Abschluss: Bachelor
 
 Studierender B
