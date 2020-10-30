@@ -18,10 +18,10 @@ Studierender A
 - Geplanter Abschluss: Bachelor
 
 Studierender B
-- Vorname: Rei
-- Nachname: Ayanami
-- Matrikelnummer: 420
-- Studiengang: Physik
+- Vorname: Mohammad
+- Nachname: Al Saleh Al Hariri
+- Matrikelnummer: 4881892
+- Studiengang: Elektrotechnik
 - Geplanter Abschluss: Bachelor
 
 Achten Sie darauf hier die Matrikelnummer und nicht die y-Nummer einzutragen.
