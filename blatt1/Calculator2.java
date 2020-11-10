@@ -46,18 +46,20 @@ public class Calculator2{
 					stOperation = Operationen[1];
 					break;
 				}
-				case "*": {
-					System.out.println(aussageOp.replace("xxx", Operationen[2]));
-					stOperation = Operationen[2];
-					break;
-				}
-				case "/": {
-					System.out.println(aussageOp.replace("xxx", Operationen[3]));
-					stOperation = Operationen[3];
+			
+	            case "*": {
+				    System.out.println(aussageOp.replace("xxx", Operationen[2]));
+				    stOperation = Operationen[2];
 					break;
 				}
 			}
-		}	
+			if(Operator.contains("/")){
+				System.out.println(aussageOp.replace("xxx", Operationen[3]));
+				stOperation = Operationen[3];
+			}
+		}
+			
+			
 		
 		else{
 			String[] index = new String[3];
