@@ -18,16 +18,15 @@ public class Calculator{
 		Scanner sc = new Scanner(System.in);
 		int Operator = sc.nextInt();
 
-        switch (Operator){
-			case 1 : { 
+        if (Operator == 1){
 			System.out.println("Addition wird ausgefüht");
-			zahl3 = zahl1 + zahl2; break;
+			zahl3 = zahl1 + zahl2;
 			}
-			case 2 : { 
+		else if (Operator ==2) { 
 			System.out.println("Subtraktion wird ausgefüht");
-			zahl3 = zahl1 - zahl2; break;
+			zahl3 = zahl1 - zahl2;
 			}
-		}
+		
 		
 		System.out.println("Das Ergebnis ist: "+ zahl3 );
 	}
