@@ -1,29 +1,29 @@
-import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Calculator{
 	public static void main (String[] args){
-		double zahl1 = 0,
-		       zahl2 = 0,
-			   zahl3 = 0;
+		String Operator = "", //Nice
+		       ersteZahl = "",
+			   zweiteZahl = "";
 			   
-		System.out.println("Geben Sie 2 Zahlen ein:\n");
-		System.out.println("Erste Zahl:  ");
-		Scanner scz1 = new Scanner(System.in);
-		zahl1 = scz1.nextInt();
-		System.out.println("\nZweite Zahl:  ");
-		Scanner scz2 = new Scanner(System.in);
-		zahl2 = scz2.nextInt();
+        int    zahl1 = 0,
+		       zahl2 = 0,
+		       zahl3 = 0;
+			   
+			   
+		ersteZahl = args[0];
+		Operator = args[1];
+		zweiteZahl = args[2];
 		
-        System.out.println("\nWelche Rechenoperation soll ausgeführt werden?\n Addition (+): 1 , Subtraktion (-): 2 ;");
-		Scanner sc = new Scanner(System.in);
-		int Operator = sc.nextInt();
-
-        if (Operator == 1){
-			System.out.println("Addition wird ausgefüht");
+		zahl1 = Integer.parseInt(ersteZahl);
+		zahl2 = Integer.parseInt(zweiteZahl);
+		
+        if (Operator.contains("+")){
+			System.out.println("Addition wird ausgefüht...");
 			zahl3 = zahl1 + zahl2;
 			}
-		else if (Operator ==2) { 
-			System.out.println("Subtraktion wird ausgefüht");
+		else if (Operator.contains("-")) { 
+			System.out.println("Subtraktion wird ausgefüht...");
 			zahl3 = zahl1 - zahl2;
 			}
 		
