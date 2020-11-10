@@ -1,0 +1,5 @@
+Bestimmte Dateiein vom Hochladen ausschließen:
+
+In der .gitignore-Datei in der Zeile 110 ist der Befehl "*.class" geschrieben.
+Dies bewirkt, dass sämtliche Dateien mit des Datentyps ".class" ( in der Regel 
+kompilierte Java Dateien) vom Hochladen ausgeschlossen werden.
