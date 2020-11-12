@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class RateSpiel{	
 	public static void main(String[] args){		
 		
@@ -7,20 +5,14 @@ public class RateSpiel{
 		    arg = args.length,
 			aVersuch = -6969; //Nice
 		
-		if (arg==0){
-			System.out.println("Sie haben vergessen eine Zahl zu uebergeben!\nGeben Sie jetzt bitte eine Zahl ein: ");
-			
-			Scanner sc = new Scanner(System.in);
-			vZahl = sc.nextInt();
-		}
-		else{
+		if (arg!=0){
 			vZahl = Integer.parseInt(args[0]);
 		}
 		
 		aVersuch = computerRaten(vZahl);
 		
 		if (aVersuch == 1){
-			System.out.println("\nEs wurde ein einziger Versuch benoetigt, um die Zahl zu raten. Du könntest heute auch im Lotto gewinnen!!");	
+			System.out.println("\nEs wurde ein einziger (1) Versuch benoetigt, um die Zahl zu raten. Du könntest heute auch im Lotto gewinnen!!");	
 		}
 		else {
 			System.out.println("\nEs wurden "+ aVersuch + " Versuche benoetigt, um die Zahl zu raten");	

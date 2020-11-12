@@ -1,5 +1,3 @@
-
-
 public class Calculator2{
 	public static void main (String[] args){
 		String Operator = "",
@@ -16,8 +14,8 @@ public class Calculator2{
 			   
 		boolean withSpaces = true;
 		
-		for (int i=0; i<4; i++){
-            if (args[0].contains(Operatoren[i])){
+		for (String iOperator : Operatoren){
+            if (args[0].contains(iOperator)){
 			    zahl3++;
 			}
 		}
