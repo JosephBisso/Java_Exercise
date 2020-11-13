@@ -15,7 +15,7 @@ Studierender A
 - Nachname: Bisso-Bi-Ela
 - Matrikelnummer: 4996512
 - Studiengang: Maschinenbau
-- Geplanter Abschluss: Bachelor
+- Geplanter Abschluss: Bachelor (Zusatzprüfung)
 
 Studierender B
 - Vorname: Mohammad
