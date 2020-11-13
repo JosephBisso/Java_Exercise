@@ -7,16 +7,15 @@ public class RateSpiel{
 		
 		if (arg!=0){
 			vZahl = Integer.parseInt(args[0]);
-		}
+			aVersuch = computerRaten(vZahl);
 		
-		aVersuch = computerRaten(vZahl);
-		
-		if (aVersuch == 1){
-			System.out.println("\nEs wurde ein einziger (1) Versuch benoetigt, um die Zahl zu raten. Du könntest heute auch im Lotto gewinnen!!");	
+		    if (aVersuch == 1){
+			    System.out.println("\nEs wurde ein einziger (1) Versuch benoetigt, um die Zahl zu raten. Du könntest heute auch im Lotto gewinnen!!");	
+		    }
+		    else {
+			    System.out.println("\nEs wurden "+ aVersuch + " Versuche benoetigt, um die Zahl zu raten");	
+		    }	
 		}
-		else {
-			System.out.println("\nEs wurden "+ aVersuch + " Versuche benoetigt, um die Zahl zu raten");	
-		}	
 	}
 
 	
