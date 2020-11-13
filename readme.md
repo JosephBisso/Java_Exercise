@@ -18,10 +18,6 @@ Studierender A
 - Geplanter Abschluss: Bachelor (Zusatzprüfung)
 
 Studierender B
-- Vorname: Mohammad
-- Nachname: Al Saleh Al Hariri
-- Matrikelnummer: 4881892
-- Studiengang: Elektrotechnik
-- Geplanter Abschluss: Bachelor
+-
 
 Achten Sie darauf hier die Matrikelnummer und nicht die y-Nummer einzutragen.
