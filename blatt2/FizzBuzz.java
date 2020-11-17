@@ -1,7 +1,20 @@
+import java.util.Scanner;
+
 public class FizzBuzz{
 	public static void main(String[] args){
 		
-		int n = Integer.parseInt(args[0]);
+		int n = -6969, //NiceNice
+		    arg = args.length;
+		
+		if (arg==0){
+			System.out.println("Sie haben vergessen eine Zahl einzugeben.\nGeben Sie jetzt eine Zahl ein:");
+			
+			Scanner sc = new Scanner(System.in);
+			n = sc.nextInt();			
+		}
+		else {
+		    n = Integer.parseInt(args[0]);
+		}
 		
 		int[] aZahl = new int [n];
 		String[] sZahl = new String[n];
