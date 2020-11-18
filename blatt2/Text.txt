@@ -1,0 +1,140 @@
+Study of Shear-Cutting Mechanisms on Wood Veneer by Vicky Reichel
+
+Abstract: Multi-material structures made from renewable materials are increasingly being addressed
+in research and industry. Especially lightweight applications based on wood and polymer materials
+offer an important opportunity to reduce weight and CO2 emissions, and thus create a sustainable
+economy. When establishing new material combinations, it is necessary to take economical and
+efficient manufacturing processes into count to enable the market entry. Therefore, the existing
+manufacturing processes needed to be adapted and improved in terms of the specific machining
+characteristic of the wood material. This study targets a combined process where a forming and
+shear-cutting process is also integrated in an injection-molding tool. The findings on the shear-cutting
+process of wood veneers are not widely investigated yet. Therefore, process and material-related
+dependences like cutting velocity, tool shape design, and preconditioning of wood veneers were
+examined. The target values cutting force and cutting-edge quality were used to describe the relations.
+The results showed specific damage and fiber fractions of the wood material compared to the isotropic
+materials (e.g., metal). In addition, low cutting forces appeared by realizing a drawing cut and high
+cutting speeds. A decrease in the cutting force with a higher moisture content could not be shown for
+the used wood types.
+
+1. Introduction
+Due to environmental changes, renewable and degradable material solutions are gaining increasing
+interest as lightweight solutions in industry and academia, in order to reduce emissions (e.g., CO2).
+One highly prioritized topic in the lightweight sector is the combination of natural fibers and wood
+materials with polymers. When using wood in such material combinations it is usually applied as
+short fiber or wood flour, e.g., in wood–plastic compound (WPC). To take advantage of the mechanical
+behavior of the wood structure with its anisotropic characteristic, it is necessary to investigate the
+material combination of polymer materials with veneer lumber [1] (p. 351).
+1.1. Wood and Polymer Materials for Lightweight Applications
+Lightweight materials are used in several industries like aerospace, automotive, or construction.
+The application of these materials addresses the reduction of weight and therefore CO2 emissions.
+When using bio-based or biodegradable materials, this factor is targeted even more effectively.
+The typical characteristics needed for lightweight solutions are materials with a high mechanical
+performance and a low weight ratio. By combining materials from different material classes like,
+wood and polymer, the advantages of the materials can be combined. For this specific combination,
+wood as a fiber-reinforced material and the formability of polymer are the main advantages [1].
+
+4. Discussion
+The results achieved extend the knowledge of the shear-cutting process on wood veneer. There
+were no specific findings available before this study. Compared to previous studies, the results showed
+a detailed cutting-edge surface and material damage in the working area of the cut. Since wood
+material is comparable to reinforced materials, some of the findings on the cutting edge might apply for
+e.g., fiber-reinforced plastics. The examination of the shear-cutting process on wood material showed
+significant differences of the surface and cutting-edge behavior, compared to metal materials. Due to
+its hollow and fibrous structure, wood showed more brittle cutting characteristic than metal. There
+was no burr zone detectable on the backside of the workpiece. This was caused by the characteristic of
+the fibers—there was no plastic deformation possible. The forces applied on the cutting edge were
+guided by the whole composite structure, so the resulting cutting edge showed approximately no
+interlaminar damages.
+Different punching tool shapes were used to evaluate the influence of the drawing and pushing
+cutting mechanism. The determination of the surface edge showed that a drawing cut led to more
+fiber breakage but lower cutting forces, while the pushing cut showed a clean cutting-edge but higher
+cutting forces. This was correlated to the cutting mechanism itself. The longer the cutting length,
+the less force was applied on single fibers. Small cutting sections could not take the resulting cutting
+load and led to fiber breakage.
+The influence of the grain orientation was examined by cutting in different fiber directions. When
+the cutting force was applied orthogonal to the fibers (γc: 90◦
+), the resulting cutting force was high.
+Fibers are the reason for the anisotropic characteristic of the wood material and cannot take loads
+longitudinal to the fiber orientation (γc: 0◦
+). The results showed that for the grain orientation of γc: 0◦
+,
+the surface characteristics (sectional ratio and order) were not reliably influenced. The cutting forces
+correlated directly on the closing forces of the mold. The specific force per distance could be used to
+determine the closing force for a specific mold size. In addition, the varying cutting forces, depending
+on the workpiece grain orientation, could lead to a tilt motion of the cutting tool and different wear
+effects. The number of growth rings was a significant influence parameter for the process forces and
+needs to be regarded in further investigations.
+Investigating the cutting speed showed a reduction of the cutting forces at high speeds. When
+cutting at higher speeds, the influence of the dynamic proportion of the cutting force lowered.
+In contrast to this, the static proportion of the cutting force correlated to the workpiece material and
+its shear strength. The variation of cutting speeds in the low value range was not significant to the
+quality of the cutting edge. When using higher cutting speeds, this might change due to force transfer
+between the fibers.
+The different wood types showed different cutting-edge characteristics, due to their specific
+structure. Additionally, the appearance of early and late wood had an influence on the cutting force due
+to their different strength values. Using more homogenous wood types like beech and birch showed
+less difference in cutting forces for different cutting angles. Specifically maple showed high differences
+in these values and was therefore not suitable for the preferably constant cutting forces in circular cuts.
+The findings on the influence of moisture were not clearly related to mechanisms in the wood
+material. While the beech and oak specimen showed a decreasing cutting force with increasing
+moisture, birch and maple materials showed the opposite. The values showed no correlation to the
+mechanical characteristics of the wood type. The specimen size influenced the water absorption of the
+specific material. When the moisture content was increased, the specimen were weighed, the dispersion
+within the specimen was not evaluated, and it could have had an influence. Especially the experiments
+on the influence of moisture were complex to perform due to the chronological order of the process
+steps. Therefore, more experiments need to be done to evaluate the influence of humidity in wood on
+the cutting behavior. As one of the most important factors on the properties of wood and polymer,
+humidity needs to be described intensively. The moisture content of wood is a complex influence.
+By targeting the combination of an injection-molding process, this parameter should be investigated
+further. For this, the exact process conditions should be known (e.g., temperatures of mold and melted
+polymer and moisture content for specific bending ratio of the veneer).
+Another important future experiment would be the determination of the bonding strength of
+the wood and the polymer component. The effects of the bonding mechanisms on the surface were
+partly investigated, but even more, the influence of the surface structure of the wood was considered
+to be relevant. The formation of undercuts at the cutting edge could lead to enlarged bonding areas
+and not only chemical but positive-fit connection. By investigating the bonding behavior of different
+shear-cutting surfaces to the polymer material, it would be possible to define the target structure.
+The experiments did not include investigations on coniferous wood. The deformation behavior
+of the wood types differed due to the different strength properties (shear strength, tensile strength).
+In order to illustrate dependencies and interdependencies, and especially the difference to deciduous
+woods, these values will be determined in future experiments.
+Future studies using high quality and comparable raw material would be beneficial. When
+presenting the results, it was shown that there were some values with higher standard deviations.
+Due to the standard deviation of the values, it was still appropriate to use full-factorized Design of
+experiments (DOE) with a high amount (≥10) of specimen per variation. It is helpful to characterize
+the veneer basically (density, tensile strength properties under the influence of moisture) to find
+dependencies. Depending on the origin, veneer manufacturing (e.g., drying process, cut) and quality
+of the wood used for the investigations, the relations described and the force values could differ when
+repeating the same experiments. When collating the current findings on wood cutting mechanisms,
+it was found that surface roughness was often investigated. To make the results more comparable to
+other cutting techniques, it would be helpful to collect surface roughness data when shear cutting.
+
+5. Conclusions
+The aim of this study was to investigate the shear-cutting properties of wood veneer. Regarding
+the parameters of the shear-cutting process (cutting angle to grain orientation, cutting speed, and
+testing temperature), as well as the tool-related parameters (punching tool shape) and material-related
+parameters (wood kind, moisture content), the cutting-edge surface and the maximum cutting force
+were examined. These investigations were conducted with respect to important findings for our
+research, aiming at the process combination of shear-cutting and injection molding. Due to the lack of
+knowledge about shear-cutting wood materials, the investigation provided the fundamental results of
+the parameter correlations, the process forces, and the cutting-edge qualities.
+Analyzing the cutting edge of the specimens showed that the wood materials behave differently
+at every single specimen, due to its natural origin. However, correlations of the parameters and
+the main characteristics could be shown. When shear-cutting wood, the material showed a specific
+cutting-edge surface characteristic. The micro-sectional analysis showed that the different sections
+varied or disappeared when different process, tool, or material parameters were used. The first
+millimeters were highly influenced by the applied forces of tension loads. These loads led to fiber
+breakage, especially when a drawing cut with an angled tool was used. The roll over zone was where
+the bended fibers could be seen without breakage. The torn zone in which the fibers bent, compressed,
+and cut the deviation of the cutting edge, was the highest. Following these sections, a clear cut-zone
+was detected. The different sections changed their dimensions when different parameters were used.
+The findings were used to analyze the conflict of low cutting forces and high cutting-edge quality,
+as is usual for the shear-cutting process. The results in Table 2 show the high potential of the conflict
+between the parameters in a shear-cutting tool. Low cutting forces appear at higher cutting speeds
+with an angled tool shape. Additionally, a higher moisture content led to low cutting forces. When
+looking one step further and including the targeted injection-molding process, the moisture content
+was the most difficult variable due to the bonding of wet wood and polymer. In the investigations,
+beech showed the lowest cutting forces. For the cutting-edge quality, a straight cut with a minimum of
+tear or broken fibers was targeted. This appeared for cutting orthogonal to the fiber direction and with
+a straight shaped punch.
+
