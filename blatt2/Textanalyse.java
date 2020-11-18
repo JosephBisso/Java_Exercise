@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 public class Textanalyse{
 	public static void main(String[] args){
 		
-		int aZeichen = 100; // Alle Buchstaben des Alphabet + äöüß und alle Sonderzeichen (wie @), ausser GrossBuchstaben
+		int aZeichen = 189; // Alle in einem Text eingebbare Zeichen des extended ASCII charts (sämtlichen GrossBuchstaben) ausgeschlossen. Source:https://www.commfront.com/pages/ascii-chart
 		int hZeichen = 2;
 		
 		int[][] hTabelle = new int [aZeichen][hZeichen];
@@ -18,7 +18,8 @@ public class Textanalyse{
 			e.printStackTrace();
 		}
 		
-		int counterIndex = 0;
+		int counterIndex = 0,
+		    indexZeichen = 0;
 		
 		while (fileReader.hasNextLine()){
 		
@@ -34,7 +35,7 @@ a:			for (char Zeichen : zeichenKette){
 				}
 				else{
 					
-					int indexZeichen = findSymbol(hTabelle, Zeichen);
+					indexZeichen = findSymbol(hTabelle, Zeichen);
 					
 					hTabelle[indexZeichen][1]++;
 				}
@@ -42,13 +43,13 @@ a:			for (char Zeichen : zeichenKette){
 			
 		}
 		
-		
+		System.out.println("\nCounter Indey beträgt "+ counterIndex +", und indexZeichen "+ indexZeichen+"\nhTabelle.length beträgt"+ hTabelle.length);
 		
 	}
 	
 	private static boolean symbolInArray(int[][] hTabelle, char Zeichen){
 		
-		for(int i=0; i<28; i++){
+		for(int i=0; i<hTabelle.length; i++){
 			
 			if(hTabelle[i][0] == (int)Zeichen){
 				
@@ -62,7 +63,7 @@ a:			for (char Zeichen : zeichenKette){
 	
 	private static int findSymbol(int[][] hTabelle, char Zeichen){
 		
-		for(int i=0; i<28; i++){
+		for(int i=0; i<hTabelle.length; i++){
 			
 			if(hTabelle[i][0] == (int)Zeichen){
 				
