@@ -16,6 +16,7 @@ materials (e.g., metal). In addition, low cutting forces appeared by realizing a
 cutting speeds. A decrease in the cutting force with a higher moisture content could not be shown for
 the used wood types.
 
+
 1. Introduction
 Due to environmental changes, renewable and degradable material solutions are gaining increasing
 interest as lightweight solutions in industry and academia, in order to reduce emissions (e.g., CO2).
@@ -24,6 +25,7 @@ materials with polymers. When using wood in such material combinations it is usu
 short fiber or wood flour, e.g., in wood–plastic compound (WPC). To take advantage of the mechanical
 behavior of the wood structure with its anisotropic characteristic, it is necessary to investigate the
 material combination of polymer materials with veneer lumber [1] (p. 351).
+
 1.1. Wood and Polymer Materials for Lightweight Applications
 Lightweight materials are used in several industries like aerospace, automotive, or construction.
 The application of these materials addresses the reduction of weight and therefore CO2 emissions.
@@ -31,7 +33,111 @@ When using bio-based or biodegradable materials, this factor is targeted even mo
 The typical characteristics needed for lightweight solutions are materials with a high mechanical
 performance and a low weight ratio. By combining materials from different material classes like,
 wood and polymer, the advantages of the materials can be combined. For this specific combination,
-wood as a fiber-reinforced material and the formability of polymer are the main advantages [1].
+wood as a fiber-reinforced material and the formability of polymer are the main advantages [1]. The
+increasing usage of (thermoplastic) biopolymers shows the relevance of the topic [2,3] (pp. 200–310).
+Biodegradable polymers contribute to improved recyclability of parts, which is important for disposable
+items as well as for long-term products (especially in the automotive industry) [4]. The combination of
+wood veneer and polymer is commonly used for decorative trim and surface elements used in cars,
+yachts, or furniture [5–8].
+However, the structural benefit of the wood material is addressed in parts as well. By combining
+thin veneer in different directions, plywood material is generated and used when stiff materials
+are needed. Polymer materials (e.g., adhesive, thermoplastic films, etc.) form the bond between
+the veneers [9] (p. 153). By combining polymer and wood veneer, the adaption of the established
+manufacturing processes becomes necessary.
+Typical bio-based polymers are polylactic acid (PLA), polyethylene (PE), polyamide (PA),
+polyethylene terephthalate (PET) and are used mainly for packaging and consumer goods but also for
+automotive and transports [10]. The polymers made from agricultural feedstock and biomass (e.g.,
+corn, sugarcane, forestry) tend to be more expensive than polymers from fossil primary materials [2,11]
+(pp. 239–244). Especially when the use of agricultural areas for food production is converted into the
+production of non-food biomass, increased attention is needed [10] (p. 40, 46). Therefore, manufacturing
+processes need to be more efficient and bio-product performances need to be more competitive than
+regular properties.
+The wood material characteristics are highly related to the material itself due to natural growing
+processes. In addition, moisture has a high influence on the mechanical behavior and therefore
+on the forming, cutting, and bonding processes [9] (p. 75). Thermoplastic polymers as used in
+the injection-molding process show decreasing mechanical properties in presence of humidity [12].
+Biopolymers show higher dependencies on processing parameters (e.g., temperature and demolding
+behavior) [13]. Resulting from these arguments the commonly used the injection-molding process is
+not suitable for the manufacturing of wood veneer-polymer parts and needs to be adapted.
+
+1.2. Process Integration
+Injection molding is a common manufacturing technology to process polymers. The process offers
+high quantities in short cycle times and is therefore suitable for high volume production. In Figure 1a,
+the concept of an injection-molding mold is shown. When the mold closes, the cutting frame is moved
+and it bends the veneer at the die. When the bending limit of the veneer is reached, the frame cuts
+the material. The polymer injection follows when the mold is closed. Therefore, the cutting process
+and the injection-molding process correlate directly. Depending on the cutting behavior of the wood
+material, specific cutting edges appear and influence the bonding between the different materials.
+A possible hybrid polymer–wood structure is depicted in Figure 1b. The targeted material combination
+consists of a cut veneer with polymer edge finish and over-molded polymer ribs acting as a structural
+reinforcement and functionalization opportunity (e.g., attachment points).
+The concept combines the forming and shear-cutting of the veneer lumber and a subsequent
+polymer application. This offers the advantage to save process time, while ensuring high part quality.
+The shear-cutting method is well-known to cut sheet metal in a short process time and to be in high
+quality. When targeting a combination of all three processes (forming, injection molding, cutting) in
+one concept the shear-cutting process is the only possible cutting process to be integrated. Hence,
+it is necessary to comprehend the different behavior of wood materials in this process, compared to
+sheet metal.
+This paper aims to investigate the open shear-cutting process of wood veneer. The fundamental
+findings and trends include the influences of the shear-cutting method, as well as the material-related
+influences of wood. This work experimentally investigated the cutting force, under the influence of
+cutting angles, cutting speed, wood type, and moisture content. The results are analyzed in the context
+of a subsequent injection process after cutting.
+
+1.3. Shear-Cutting Method
+Shear-cutting is used for the high volume processing of two-dimensional semi-finished products.
+The cutting process is often combined with forming operation to enable short process cycles. One
+stroke of the cutting tool leads to a complete formation of the cutting edge. This allows a high amount
+of automated cuts to be carried out in a short time [14,15]. Often the process is combined with forming
+operations in one tool [16]. A disadvantage of the shear-cutting process is the low flexibility for the
+cutting shape. The whole cutting tool (punch and die) needs to be changed at the tool guidance to vary
+the shape of the parts. Since shear-cutting is a tool-based method in contrast to water-jet or laserbeam,
+cutting wear appears on the punch and die, such that maintenance intervals need to be considered.
+In addition, the cutting forces are applied on the cutting edge of the workpiece and leads to a specific
+cutting-edge geometry (cf. Chapter 3.1). In accordance with DIN 8588 [17], shear-cutting is a chipless
+cutting process.
+In shear cutting, the moving punch tool passes the static die (cf. Figure 2a). The clearance between
+these tools is called the die clearance, which influences the cutting force, wear of the tool, and the
+workpiece edge cutting quality (cf. Chapter 3.1). These factors are in conflict with each other when
+optimizing the process. A smaller die clearance increases forces and tool wear but also improves
+surface qualities by lowering the roll over and the torn zone. Cutting forces decrease by widening the
+clearance and usage of lubricants but can also be lowered by decreasing the wedge angle β, which
+reduces the frictional forces [16,18,19].
+Influencing the cutting force is also possible by using different punch geometries (Figure 2c).
+By increasing the cutting angle αc, a drawing cut is executed. The load applied on the cutting edge of
+the workpiece is more selective than that for a straight cut, where the whole cutting edge is cut at the
+same time. When comparing the maximum cutting forces of the two punch geometries, the force for a
+straight cut is therefore higher
+
+1.4. Cutting Process of Wood Materials
+The common separation process for wood materials is sawing [21–23]. However, this chip-forming
+process has different movement characteristics and therefore it cannot be compared to shear cutting.
+In the sawing process, material is gradually removed from the workpiece, which is no longer available
+in the final component.
+There are minor findings on the closed shear-cutting on wood materials. Kollmann [23] listed
+findings for the tool geometry and cutting angle optimized for low forces and clean cutting edge of a
+closed cut on different wood materials. Recent findings on the closed shear cut (definition cf. Figure 2b)
+of medium density fiberboards (MDF) can be found in [24]. Due to the different cutting mechanisms
+and structure of the investigated wood materials, these results cannot be transferred to the questions
+targeted in this research.
+A similar process to shear-cutting is knife cutting, which is used for example to cut thin veneer
+lumber [9,23]. The difference to shear-cutting is a smaller wedge angle of the knife tool and no die is
+needed [25] (p. 56). The small wedge-angle leads to a lower influence on the damage of the material [26]
+(p. 14). This leads to the disadvantage that the small wedge angle leads to a higher wear dependency
+than shear cutting.
+There have been numerous studies on the cutting mechanisms of wood through common methods
+like sewing and milling [26–29], as well as alternative cutting methods like water-jet [30–32] and laser
+cutting [33–36]. The potential of the shear-cutting on wood has not been extensively investigated in
+literature, so far. There are no recent findings on favorable shear-cutting parameters of wood veneers,
+due to the uncommon application of shear-cutting or stamping on this material [9,23]. By investigating
+the behavior and cutting edge quality of veneer lumber in the shear-cutting process as a function of the
+material and process parameters, fundamental knowledge is acquired.
+Defining the forces in the shear-cutting process of veneer lumber is the major question for
+characterizing the shear-cutting behavior of wood materials. Which cutting-edge characteristic is
+suitable for the subsequent injection-molding process is not known yet. Therefore, targeted properties
+of the cutting edge are not defined for the overall process described in Chapter 1.1. The optimization to
+a minimal cutting force value while considering the cutting-edge quality is the target of the experiments.
+
 
 4. Discussion
 The results achieved extend the knowledge of the shear-cutting process on wood veneer. There
@@ -109,6 +215,7 @@ repeating the same experiments. When collating the current findings on wood cutt
 it was found that surface roughness was often investigated. To make the results more comparable to
 other cutting techniques, it would be helpful to collect surface roughness data when shear cutting.
 
+
 5. Conclusions
 The aim of this study was to investigate the shear-cutting properties of wood veneer. Regarding
 the parameters of the shear-cutting process (cutting angle to grain orientation, cutting speed, and
@@ -137,4 +244,3 @@ was the most difficult variable due to the bonding of wet wood and polymer. In t
 beech showed the lowest cutting forces. For the cutting-edge quality, a straight cut with a minimum of
 tear or broken fibers was targeted. This appeared for cutting orthogonal to the fiber direction and with
 a straight shaped punch.
-
