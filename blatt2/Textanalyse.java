@@ -43,8 +43,32 @@ a:			for (char Zeichen : zeichenKette){
 			
 		}
 		
-		System.out.println("\nCounter Indey beträgt "+ counterIndex +", und indexZeichen "+ indexZeichen+"\nhTabelle.length beträgt"+ hTabelle.length);
 		
+	    int[] auflistung = new int [10];
+	
+		System.out.println("\nDie originale ersten 10 Einträge sind: " );
+        for(int i=0; i<10; i++){
+			auflistung[i] = hTabelle[i][1];
+			System.out.println((char)hTabelle[i][0] + " : " +auflistung[i]);
+
+		}
+		
+	    hTabelle = sortArray(hTabelle, counterIndex);
+
+		System.out.println("\nDie 10 Häaufigkeit sind: " );
+        for(int i=0; i<10; i++){
+			auflistung[i] = hTabelle[counterIndex-i-1][1];
+			System.out.println((char)hTabelle[counterIndex-i-1][0] + " : " +auflistung[i]);
+
+		}
+		
+		System.out.println("\nDie ersten 10 Einträge sind: " );
+        for(int i=0; i<10; i++){
+			auflistung[i] = hTabelle[i][1];
+			System.out.println((char)hTabelle[i][0] + " : " +auflistung[i]);
+
+		}
+
 	}
 	
 	private static boolean symbolInArray(int[][] hTabelle, char Zeichen){
@@ -74,4 +98,42 @@ a:			for (char Zeichen : zeichenKette){
 		return -6969; //NiceNice
 	}
 	
+	private static int[][] sortArray(int[][] hTabelle, int aEintraege){
+		
+		int[][] Tabelle = hTabelle;
+		int[] zwischenWert = new int [2],
+		      maxWerte = new int [3];
+		int max = -420,
+		    m = -1;
+			
+		for(int i =0; i<aEintraege;i++){
+			
+			if(Tabelle[i][1]>=max){
+				
+				max = Tabelle[i][1];
+				
+				for(int j=0;j<2;j++){
+					maxWerte[j]= Tabelle[i][j];
+					m = i;
+					maxWerte[2] = m;
+				}
+			}
+			
+			if (i==aEintraege-1){
+				
+				for(int j=0;j<2;j++){
+					
+					zwischenWert[j]= Tabelle[i][j];
+				    Tabelle[i][j] = maxWerte[j];
+					Tabelle[m][j] = zwischenWert[j];
+				}
+			}
+		}	
+		
+		int k =0;
+		
+		
+		return Tabelle;
+		
+	}	
 }
