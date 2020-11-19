@@ -24,9 +24,14 @@ public class Textanalyse{
 		
 		while (fileReader.hasNextLine()){
 		
-			char[] zeichenKette = fileReader.nextLine().toLowerCase().toCharArray();
+			char[] zeichenKette = fileReader.nextLine().toCharArray();
 			
 a:			for (char Zeichen : zeichenKette){	
+
+                if (Character.isAlphabetic(Zeichen)){
+					
+					Zeichen = Character.toLowerCase(Zeichen);
+				}
 
 				if (!symbolInArray(hTabelle, Zeichen)){
 					
@@ -45,9 +50,25 @@ a:			for (char Zeichen : zeichenKette){
 		}
 		
 		sortArray(hTabelle);
-		printArray(hTabelle);
+		
+		boolean alleZeichen = printArray(hTabelle);
+		
+		if (!alleZeichen){
+			
+			System.out.println("\nMehrere ZAHLEN und andere (SONDER-)ZEICHEN wurden nicht während der Ausgabe berücksichtigt. Wollen Sie sie trozdem sehen?\nja oder nein?");
+		
+		    Scanner sc = new Scanner(System.in);
+		    String antwort = sc.nextLine();
+		
+		    if (antwort.equals("ja")){
+			
+			    printArray(hTabelle, alleZeichen);
+		    }
+		}
 	
 	}
+	
+	
 	private static boolean symbolInArray(int[][] hTabelle, char Zeichen){
 		
 		for(int i=0; i<hTabelle.length; i++){
@@ -105,9 +126,10 @@ a:			for (char Zeichen : zeichenKette){
 		
 	}	
 	
-	private static void printArray(int[][] hTabelle){
+	private static boolean printArray(int[][] hTabelle){
 		
-	    int counter = 0;
+	    int counter = 0,
+		    counterNoLetterorDigit = 0;
 		
 		for(int i=0; i<hTabelle.length; i++){
 			
@@ -117,11 +139,45 @@ a:			for (char Zeichen : zeichenKette){
 			}
 		}
 		
-		System.out.println("\nDie Zeichen in Ihrem Text-Datei wurde auf Haufigkeit analysiert, und hiert folgt das Ergebnis.\n(Zeichen | Haeufigkeit)\n");
+		System.out.println("\nDie Zeichen in Ihrem Text-Datei wurde auf Haufigkeit analysiert, und hiert folgt das Ergebnis.\n\n(Buchstaben | Haeufigkeit)");
 		for(int i=(hTabelle.length-1);i>=counter;i--){
 			
-			System.out.println("       "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
+			if(Character.isAlphabetic(hTabelle[i][0])){
+				
+			    counterNoLetterorDigit++;
+			    System.out.println("          "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
+			}
 		}
+		
+		if (counterNoLetterorDigit>0){
+			
+			return false;
+		}
+		
+		return true;
+		
+	}
+	
+	private static void printArray(int[][] hTabelle, boolean alle){
+		
+		alle = !alle;
+		
+	    int counter = 0,
+		    counterNoLetterorDigit = 0;
+		
+		for(int i=0; i<hTabelle.length; i++){
+			
+			if(!(hTabelle[i][1]>=1)){
+				
+				counter++;
+			}
+		}
+		
+		System.out.println("\nHier folgt das Ergebnis für alle Zeichen in Ihrem Text.\n\n(Zeichen | Haeufigkeit)");
+        for(int i=(hTabelle.length-1);i>=counter;i--){
+
+			System.out.println("       "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
+        }
 		
 	}
 }
