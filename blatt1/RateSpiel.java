@@ -22,7 +22,7 @@ public class RateSpiel{
 						
 		if (arg == 0){
 		 	System.out.println("\nEs wird jetzt eine Zufallszahl generiert. Versuchen Sie diese Zahl zu raten!\nGeben dafür eine Zahl ein:");
-			int zRZahl = (int) (100 * Math.random());
+			int zRZahl = (int) (100 * Math.random()); // 100 wird nicht erreicht
 			
 			do{
 			    Scanner sc = new Scanner (System.in);
@@ -67,7 +67,7 @@ public class RateSpiel{
 	
     static int computerRaten(int vZahl){
 		
-	    double dZahl = 100 * Math.random();
+	    double dZahl = 100 * Math.random(); // 100 wird nicht erreicht
 	    int zZahl = (int) dZahl,
     	    c = 0,
 	    	uGrenze = 0,
