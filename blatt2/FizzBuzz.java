@@ -4,7 +4,7 @@ public class FizzBuzz{
 	public static void main(String[] args){
 		
 		int n = -6969, //NiceNice
-		    arg = args.length;
+			arg = args.length;
 		
 		if (arg==0){
 			System.out.println("Sie haben vergessen eine Zahl einzugeben.\nGeben Sie jetzt eine Zahl ein:");
@@ -13,7 +13,7 @@ public class FizzBuzz{
 			n = sc.nextInt();			
 		}
 		else {
-		    n = Integer.parseInt(args[0]);
+			n = Integer.parseInt(args[0]);
 		}
 		
 		int[] aZahl = new int [n];
@@ -37,7 +37,7 @@ public class FizzBuzz{
 			}
 			
 			if (i!=n-1){
-			    auflistung += (sZahl[i] + ",");
+				auflistung += (sZahl[i] + ",");
 			}
 			else{
 				auflistung += sZahl[i];

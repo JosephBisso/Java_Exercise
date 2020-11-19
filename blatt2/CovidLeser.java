@@ -6,7 +6,7 @@ public class CovidLeser{
 	public static void main(String[] args){
 		
 		int nZeile = 8953,
-		    nSpalte = 11;
+			nSpalte = 11;
 		String[][] sCovid = new String [nZeile][nSpalte];
 		
 		File file = new File("RKI_COVID19.csv");

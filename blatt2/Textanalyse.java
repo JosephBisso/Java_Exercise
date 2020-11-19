@@ -28,7 +28,7 @@ public class Textanalyse{
 			
 a:			for (char Zeichen : zeichenKette){	
 
-                if (Character.isAlphabetic(Zeichen)){
+			if (Character.isAlphabetic(Zeichen)){
 					
 					Zeichen = Character.toLowerCase(Zeichen);
 				}
@@ -57,17 +57,17 @@ a:			for (char Zeichen : zeichenKette){
 			
 			System.out.println("\nMehrere ZAHLEN und andere (SONDER-)ZEICHEN wurden nicht während der Ausgabe berücksichtigt. Wollen Sie sie trozdem sehen?\nja oder nein?");
 		
-		    Scanner sc = new Scanner(System.in);
-		    String antwort = sc.nextLine();
+			Scanner sc = new Scanner(System.in);
+			String antwort = sc.nextLine();
 		
-		    if (antwort.equals("ja")){
+			if (antwort.equals("ja")){
 			
-			    printArray(hTabelle, alleZeichen);
-		    }
+				printArray(hTabelle, alleZeichen);
+			}
 		}
 	
 	}
-	
+
 	
 	private static boolean symbolInArray(int[][] hTabelle, char Zeichen){
 		
@@ -114,13 +114,13 @@ a:			for (char Zeichen : zeichenKette){
 				for(int j=0; j<2; j++){
 				
 				    hTabelle[k+1][j] = hTabelle[k][j];	
-			    }			
+				}			
 				k--;
 			}
 			
 			for(int j=0; j<2; j++){
 				
-			    hTabelle[k+1][j] = zwischenWert[j];
+				hTabelle[k+1][j] = zwischenWert[j];
 			}	
 		}
 		
@@ -128,8 +128,8 @@ a:			for (char Zeichen : zeichenKette){
 	
 	private static boolean printArray(int[][] hTabelle){
 		
-	    int counter = 0,
-		    counterNoLetterorDigit = 0;
+		int counter = 0,
+			counterNoLetterorDigit = 0;
 		
 		for(int i=0; i<hTabelle.length; i++){
 			
@@ -144,8 +144,8 @@ a:			for (char Zeichen : zeichenKette){
 			
 			if(Character.isAlphabetic(hTabelle[i][0])){
 				
-			    counterNoLetterorDigit++;
-			    System.out.println("          "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
+				counterNoLetterorDigit++;
+				System.out.println("          "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
 			}
 		}
 		
@@ -162,8 +162,8 @@ a:			for (char Zeichen : zeichenKette){
 		
 		alle = !alle;
 		
-	    int counter = 0,
-		    counterNoLetterorDigit = 0;
+		int counter = 0,
+			counterNoLetterorDigit = 0;
 		
 		for(int i=0; i<hTabelle.length; i++){
 			
@@ -174,10 +174,10 @@ a:			for (char Zeichen : zeichenKette){
 		}
 		
 		System.out.println("\nHier folgt das Ergebnis für alle Zeichen in Ihrem Text.\n\n(Zeichen | Haeufigkeit)");
-        for(int i=(hTabelle.length-1);i>=counter;i--){
+		for(int i=(hTabelle.length-1);i>=counter;i--){
 
 			System.out.println("       "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
-        }
+		}
 		
 	}
 }
