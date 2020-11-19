@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 public class Textanalyse{
 	public static void main(String[] args){
 		
-		int aZeichen = 189; // Alle in einem Text eingebbare Zeichen des extended ASCII charts (sämtlichen GrossBuchstaben) ausgeschlossen. Source:https://www.commfront.com/pages/ascii-chart
+		int aZeichen = 189; // Alle in einem Text eingebbare Zeichen (Englisch, Deutsch, Französisch, Lateisch) des extended ASCII charts (sämtlichen GrossBuchstaben) ausgeschlossen. Source:https://www.commfront.com/pages/ascii-chart
 		int hZeichen = 2;
 		
 		int[][] hTabelle = new int [aZeichen][hZeichen];
