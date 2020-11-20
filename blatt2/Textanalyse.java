@@ -55,12 +55,12 @@ a:			for (char Zeichen : zeichenKette){
 		
 		if (!alleZeichen){
 			
-			System.out.println("\nMehrere ZAHLEN und andere (SONDER-)ZEICHEN wurden nicht während der Ausgabe berücksichtigt. Wollen Sie sie trozdem sehen?\nja oder nein?");
+			System.out.println("\nMehrere ZAHLEN und/oder andere (SONDER-)ZEICHEN wurden nicht während der Ausgabe berücksichtigt!! Wollen Sie sie trozdem sehen?\nja oder nein?");
 		
 			Scanner sc = new Scanner(System.in);
 			String antwort = sc.nextLine();
 		
-			if (antwort.equals("ja")){
+			if (antwort.equals("ja") || antwort.equals("j") || antwort.equals("1")){
 			
 				printArray(hTabelle, alleZeichen);
 			}
@@ -129,7 +129,7 @@ a:			for (char Zeichen : zeichenKette){
 	private static boolean printArray(int[][] hTabelle){
 		
 		int counter = 0,
-			counterNoLetterorDigit = 0;
+			counterOnlyLetter = 0;
 		
 		for(int i=0; i<hTabelle.length; i++){
 			
@@ -144,12 +144,12 @@ a:			for (char Zeichen : zeichenKette){
 			
 			if(Character.isAlphabetic(hTabelle[i][0])){
 				
-				counterNoLetterorDigit++;
+				counterOnlyLetter++;
 				System.out.println("          "+(char)hTabelle[i][0]+" | "+hTabelle[i][1]);
 			}
 		}
 		
-		if (counterNoLetterorDigit>0){
+		if (counterOnlyLetter!=hTabelle.length-counter){
 			
 			return false;
 		}
