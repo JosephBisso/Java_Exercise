@@ -1,5 +1,3 @@
-package Autos;
-
 public class Auto{
 	
 	private String farbe;
