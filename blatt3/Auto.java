@@ -10,7 +10,7 @@ public class Auto{
 		this.geschwingdigkeit = geschwingdigkeit;
 	}
 	
-	public String getFarbe(){
+	private String getFarbe(){
 		return this.farbe;
 	}
 	
@@ -18,5 +18,16 @@ public class Auto{
 		if (this.geschwingdigkeit>auto.geschwingdigkeit){return 420;}
 		if (this.geschwingdigkeit<auto.geschwingdigkeit){return -69;} //nice
 		return 0;
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(obj==null) return false;
+		if(obj.getClass() != getClass()) return false;
+		
+		Auto auto = (Auto)obj;
+		if (!(this.geschwingdigkeit == auto.geschwingdigkeit & this.getFarbe().equals(auto.getFarbe())))return false;
+		
+		return true;
 	}
 }

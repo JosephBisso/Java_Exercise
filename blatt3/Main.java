@@ -23,7 +23,10 @@ public class Main{
 			}
 		}
 		
-		System.out.println("\nDas Ergebnis aus auto1==auto2 ist: ");
+		System.out.println("\nDas Ergebnis aus der Operation auto1==auto2 ist: ");
 		System.out.println(auto1 == auto2);
+		
+		System.out.println("\nDas Ergebnis aus dem Vergleich mit der Methode equals ist:");
+		System.out.println(auto1.equals(auto2));
 	}
 }
