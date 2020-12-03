@@ -9,18 +9,21 @@ public class Main{
 		final int C = auto1.compareTo(auto2);
 		switch (C){
 			case 420:{
-				System.out.println("Auto1 ist schneller als Auto2");
+				System.out.println("\nAuto1 ist schneller als Auto2");
 				break;
 			}
-			case -69:{
-				System.out.println("Auto1 ist langsamer als Auto2");
+			case -69:{ //Nice
+				System.out.println("\nAuto1 ist langsamer als Auto2");
 				break;
 			}
 			default :
 				{
-				System.out.println("Auto1 ist genauso schnell wie Auto2");
+				System.out.println("\nAuto1 ist genauso schnell wie Auto2");
 				break;
 			}
 		}
+		
+		System.out.println("\nDas Ergebnis aus auto1==auto2 ist: ");
+		System.out.println(auto1 == auto2);
 	}
 }
