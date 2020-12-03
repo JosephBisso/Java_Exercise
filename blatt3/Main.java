@@ -4,7 +4,7 @@ public class Main{
 	public static void main(String[] args){
 		
 		Auto auto1 = new Auto("Schwarz", 45.23);
-		Auto auto2 = new Auto("Rot", 36.97);
+		Auto auto2 = new Auto("Schwarz", 45.23);
 		
 		final int C = auto1.compareTo(auto2);
 		switch (C){
