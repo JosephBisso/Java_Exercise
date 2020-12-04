@@ -4,7 +4,7 @@ import java.util.Date;
 public class Simulation{
 	public static void main(String[] args){
 		
-		int randomgehegeAnzahl = (int)((5*Math.random())+9);
+		int randomgehegeAnzahl = (int)((2*Math.random())+10);
 		Zoo zoo = new Zoo(1000, 5000, randomgehegeAnzahl);
 		
 		Loewe[] loewen = new Loewe[6];
@@ -17,7 +17,7 @@ public class Simulation{
 			
 			double randomHunger = 10*Math.random()+1;
 			double randomDurst = 50*Math.random()+1;
-			int randomGroesse = (int)(20*Math.random())%4+1;
+			int randomGroesse = 1+(int)(20*Math.random())%3;
 			
 			if (i==5){
 				loewen[i] = new Loewe(namen[i], randomHunger, randomGroesse);
@@ -34,8 +34,8 @@ public class Simulation{
 		int zeit = 0;
 		Tier[] gehege = zoo.getGehege();
 		boolean[] verflegung = new boolean[2];
-		
-		System.out.println("\nDie Simulation wird für "+gehege.length+" Gehege im Zoo durchgeführt...");
+		int anzahlGehege = gehege.length;
+		System.out.println("\nDie Simulation wird für "+anzahlGehege+" Gehege im Zoo durchgeführt...");
 a:		while(true){
 b:			for(Tier tier: gehege){
 				if(tier == null) continue b;
@@ -43,26 +43,26 @@ b:			for(Tier tier: gehege){
 				verflegung[1]= zoo.traenken(tier);
 			
 				if (verflegung[0] & verflegung[1]){
-					zeit++;
 					continue b;
 				}
 				else if(!verflegung[0] & !verflegung[1]){
-					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Futter- und Wassermangel organisiert werden.");
+					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Futter- und Wassermangel organisiert werden.\n");
+					System.out.println("Hungriger "+tier.getClass().getName()+"(nammens "+tier.getName()+")"+":'"+tier.toString()+"'");
 					break a;
 				}
 				else if(!verflegung[0]){
-					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Futtermangel organisiert werden.");
+					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Futtermangel organisiert werden.\n");
+					System.out.println("Hungriger "+tier.getClass().getName()+"(nammens "+tier.getName()+")"+":'"+tier.toString()+"'");
 					break a;
 				}
 				else if(!verflegung[1]){
-					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Wassermangel organisiert werden.");
+					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Wassermangel organisiert werden.\n");
+					System.out.println("Durstiger "+tier.getClass().getName()+"(nammens "+tier.getName()+")"+":'"+tier.toString()+"'");
 					break a;
 				}
 			}
+			zeit++;
 		}
-		System.out.println("Ender der Simulation.");
-		
-		
-		
+		System.out.println("\nEnder der Simulation.");	
 	}
 }

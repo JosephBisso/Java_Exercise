@@ -14,7 +14,7 @@ public class Loewe extends Tier{
 		
 		int random = (int)(100*Math.random());
 		
-		if (random%6==0 || random%9==0) return "...";
+		if (random%2==0) return "...";
 		
 		return "Grooooooooaaaaaar";
 	}

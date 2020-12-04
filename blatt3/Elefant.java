@@ -9,9 +9,9 @@ public class Elefant extends Tier{
 	}
 	
 	public String toString(){
-		String antwort = "";
+		String antwort = super.toString();
 		if (super.groesse>=2){
-			antwort =  super.toString() + "Töröö";
+			antwort +=" Töröö";
 		} 
 		return antwort;
 	}	
