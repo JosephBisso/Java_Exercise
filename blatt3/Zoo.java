@@ -22,7 +22,7 @@ public class Zoo{
 			}
 		}
 		
-		System.out.println("\nAlle Gehege im Zoo sind besetzt. Der neue " + tier.getClass().getName() +" nammens '" + tier.getName() + "' kann nicht in den Zoo einziehen.");		
+		System.out.println("**Alle Gehege im Zoo sind besetzt. Der neue " + tier.getClass().getName() +" nammens '" + tier.getName() + "' kann nicht in den Zoo einziehen.");		
 	}
 	
 	public double getEssen(){
