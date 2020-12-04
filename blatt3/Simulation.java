@@ -1,5 +1,4 @@
 import java.lang.Math;
-import java.util.Date;
 
 public class Simulation{
 	public static void main(String[] args){
@@ -47,22 +46,22 @@ b:			for(Tier tier: gehege){
 				}
 				else if(!verflegung[0] & !verflegung[1]){
 					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Futter- und Wassermangel organisiert werden.\n");
-					System.out.println("Hungriger "+tier.getClass().getName()+"(nammens "+tier.getName()+")"+":'"+tier.toString()+"'");
+					System.out.println("Hungriger "+tier.getClass().getName()+"(nammens '"+tier.getName()+"')"+":'"+tier.toString()+"'");
 					break a;
 				}
 				else if(!verflegung[0]){
 					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Futtermangel organisiert werden.\n");
-					System.out.println("Hungriger "+tier.getClass().getName()+"(nammens "+tier.getName()+")"+":'"+tier.toString()+"'");
+					System.out.println("Hungriger "+tier.getClass().getName()+"(nammens '"+tier.getName()+"')"+":'"+tier.toString()+"'");
 					break a;
 				}
 				else if(!verflegung[1]){
 					System.out.println("Die Simulation wurde gestoppt. Nach " +zeit+ " Tagen soll eine neue Verflegung wegen Wassermangel organisiert werden.\n");
-					System.out.println("Durstiger "+tier.getClass().getName()+"(nammens "+tier.getName()+")"+":'"+tier.toString()+"'");
+					System.out.println("Durstiger "+tier.getClass().getName()+"(nammens '"+tier.getName()+"')"+":'"+tier.toString()+"'");
 					break a;
 				}
 			}
 			zeit++;
 		}
-		System.out.println("\nEnder der Simulation.");	
+		System.out.println("\nEnde der Simulation.");	
 	}
 }
