@@ -19,8 +19,8 @@ public class Simulation{
 			int randomGroesse = 1+(int)(20*Math.random())%3;
 			
 			if (i==5){
-				loewen[i] = new Loewe(namen[i], randomHunger, randomGroesse);
-				elefanten[i] = new Elefant(namen[6+i], randomHunger, randomGroesse);
+				loewen[i] = new Loewe(namen[i], randomHunger, randomDurst);
+				elefanten[i] = new Elefant(namen[6+i], randomHunger, randomDurst);
 			}
 			else{
 				loewen[i] = new Loewe(namen[i], randomHunger, randomDurst, randomGroesse);
