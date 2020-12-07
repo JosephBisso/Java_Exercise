@@ -12,6 +12,8 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+checkstyle-7.6.1-tubs
+tubs_checks.xml
 
 # Generated files
 .idea/**/contentModel.xml
