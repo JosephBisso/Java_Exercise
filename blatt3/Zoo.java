@@ -1,43 +1,41 @@
-public class Zoo{
+public class Zoo {
 	
 	private double essen;
 	private double wasser;
 	private int gehegeanzahl;
 	private Tier[] gehege;
 	
-	public Zoo(int essen, int wasser, int gehegeanzahl){
+	public Zoo(int essen, int wasser, int gehegeanzahl) {
 		this.essen = essen;
 		this.wasser = wasser;
 		this.gehegeanzahl = gehegeanzahl;
 		gehege = new Tier [gehegeanzahl];
 	}
 	
-	public void neuesTier(Tier tier){
+	public void neuesTier(Tier tier) {
 		
-		for(int i=0; i<gehegeanzahl; i++){
+		for(int i = 0; i < gehegeanzahl; i++) {
 			
-			if (gehege[i]==null){				
+			if (gehege[i] == null) {				
 				gehege[i] = tier;
 				return;
 			}
 		}
 		
-		System.out.println("**Alle Gehege im Zoo sind besetzt. Der neue " + tier.getClass().getName() +" nammens '" + tier.getName() + "' kann nicht in den Zoo einziehen.");		
+		System.out.println("**Alle Gehege im Zoo sind besetzt. Der neue " + tier.getClass().getName() + " nammens '" + tier.getName() + "' kann nicht in den Zoo einziehen.");		
 	}
 	
-	public double getEssen(){
-		
+	public double getEssen() {	
 		return essen;
 	}
 	
-	public double getWasser(){
+	public double getWasser() {
 		return wasser;
 	}
 	
-	public boolean fuetter(Tier tier){
-		
+	public boolean fuetter(Tier tier) {
 		double essMenge = tier.essen();
-		if (essen >= essMenge){
+		if (essen >= essMenge) {
 			essen -= essMenge;
 			return true;
 		}
@@ -45,10 +43,9 @@ public class Zoo{
 		return false;
 	}
 	
-	public boolean traenken(Tier tier){
-		
+	public boolean traenken(Tier tier) {
 		double trinkMenge = tier.trinken();
-		if (wasser >= trinkMenge){
+		if (wasser >= trinkMenge) {
 			wasser -= trinkMenge;
 			return true;
 		}
@@ -56,7 +53,7 @@ public class Zoo{
 		return false;
 	}
 	
-	public Tier[] getGehege(){
+	public Tier[] getGehege() {
 		return gehege;
 	}
 }
