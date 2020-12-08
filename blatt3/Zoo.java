@@ -1,4 +1,4 @@
-/**Dies ist der Klasse Zoo aus der Aufgabe 9.*/
+/**Dies ist die Klasse Zoo aus der Aufgabe 9.*/
 public class Zoo {
 	
 	private double essen;
@@ -6,7 +6,7 @@ public class Zoo {
 	private int gehegeanzahl;
 	private Tier[] gehege;
 	
-	/**Dies ist der Konstruktoren der Klasse Zoo. Es werden @param essen , 
+	/**Dies ist der Konstruktor der Klasse Zoo. Es werden @param essen , 
 	 *@param wasser und 
 	 *@param gehegeanzahl übergeben und initialisiert
 	*/
@@ -21,7 +21,6 @@ public class Zoo {
 	 *Wenn nicht dann gibt sie eine Meldung
 	*/
 	public void neuesTier(Tier tier) {
-		
 		for (int i = 0; i < gehegeanzahl; i++) {
 			
 			if (gehege[i] == null) {				

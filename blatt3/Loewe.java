@@ -1,4 +1,4 @@
-/**Dies ist der Klasse Loewe aus der Aufgabe 9. Sie Eigenschaften von der Klasse Tier*/
+/**Dies ist die Klasse Loewe aus der Aufgabe 9. Sie Eigenschaften von der Klasse Tier*/
 public class Loewe extends Tier {
 	
 	/**Dies ist einer der Konstruktoren der Klasse Loewe. Es werden @param name , 

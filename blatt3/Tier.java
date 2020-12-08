@@ -1,4 +1,4 @@
-/**Dies ist der Klasse Tier aus der Aufgabe 9. Sie ist abstract!*/
+/**Dies ist die Klasse Tier aus der Aufgabe 9. Sie ist abstract!*/
 public abstract class Tier {
 	
 	protected String name;

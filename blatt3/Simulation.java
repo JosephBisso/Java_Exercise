@@ -1,4 +1,4 @@
-/**Dies ist der Klasse Simulation aus der Aufgabe 9. Sie enthählt die Main Methode*/
+/**Dies ist die Klasse Simulation aus der Aufgabe 9. Sie enthählt die Main Methode*/
 public class Simulation {
 	public static void main(String[] args) {
 		
@@ -13,7 +13,6 @@ public class Simulation {
 		System.out.println("\n");
 		
 		for (int i = 0; i < 6; i++) {
-			
 			double randomHunger = 10 * Math.random() + 1;
 			double randomDurst = 50 * Math.random() + 1;
 			int randomGroesse = 1 + (int) (20 * Math.random()) % 3;

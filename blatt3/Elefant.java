@@ -1,4 +1,4 @@
-/**Dies ist der Klasse Elefant aus der Aufgabe 9. Sie Eigenschaften von der Klasse Tier*/
+/**Dies ist die Klasse Elefant aus der Aufgabe 9. Sie Eigenschaften von der Klasse Tier*/
 public class Elefant extends Tier {
 	
 	/**Dies ist einer der Konstruktoren der Klasse Elefant. Es werden @param name , 
