@@ -23,17 +23,8 @@ public class IntArrayList implements List<Integer> {
 		intArrayList = new int[1];
 	}
 	
-/*	private IntArrayList(int[] intArrayList){
-		int size = intArrayList.length;
-		this.intArrayList = new int[size];
-		
-		for (int i = 0; i < size; i++) {
-			this.intArrayList[i] = intArrayList[i];
-		}
-	}
-*/	
 	public String toString() {		
-		String stringArrayList;
+		String stringArrayList = "";
 		int size = size();
 		
 		for (int i = 0; i < size; i++) {
@@ -66,7 +57,14 @@ public class IntArrayList implements List<Integer> {
 		}
 	}
 	
-	public boolean contains(int value) {
+	public boolean contains(Object o) {
+		if (o == null) {
+			return false;
+		}
+		if (o.getClass() != getClass()) {
+			return false;
+		}
+		Integer value = (Integer) o;
 		for (int intValue : intArrayList) {
 			if (intValue == value) {
 				return true;
@@ -155,6 +153,7 @@ public class IntArrayList implements List<Integer> {
 				return i;
 			}
 		}
+		return -69;
 	}
 	
 	public List<Integer> subList(int fromIndex, int toIndex){
@@ -202,5 +201,17 @@ public class IntArrayList implements List<Integer> {
 	
 	public boolean remove(Object o) {
 		return false;
+	}
+	
+	public <Integer> Integer[] toArray(Integer[] i) {
+		return null;
+	}
+	
+	public Object[] toArray() {
+		return null;
+	}
+	
+	public Iterator<Integer> iterator() {
+		return null;
 	}
 }
