@@ -1,34 +1,31 @@
 import java.util.*;
 
-/** Klasse IntArrayList aus Aufgabe 10
-*/
 public class IntArrayList implements List<Integer> {
 
-/** main Methode
-*/
 	public static void main(String[] args) {
 		IntArrayList intArray = new IntArrayList();
 		System.out.println("Erste Ausgabe der Liste : " + intArray.toString()); 
 		System.out.println("Size : " + intArray.size());
 		System.out.println("Leer ? : " + intArray.isEmpty());
+		
 		intArray.add(3);
 		intArray.add(5);
 		intArray.add(1, 15);
 		System.out.println("Zweite Ausgabe der Liste : " + intArray.toString()); 
+		
 		intArray.remove(15);
 		System.out.println("Dritte Ausgabe der Liste : " + intArray.toString()); 
+		
 		intArray.clear();
 		System.out.println("Letzte Ausgabe der Liste : " + intArray.toString()); 
 	}
 
-/** 
-*/
 	private int[] intArrayList;
-	
+
 	public IntArrayList() {
 		intArrayList = new int[0];
 	}
-	
+
 	public String toString() {		
 		String stringArrayList = "";
 		int size = size();
@@ -38,6 +35,8 @@ public class IntArrayList implements List<Integer> {
 			
 			if (i < size - 1) {
 				stringArrayList += ", ";
+			} else {
+				stringArrayList += ".";
 			}
 		}
 		return stringArrayList;
