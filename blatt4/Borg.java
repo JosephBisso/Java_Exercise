@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.awt.List;
 
 public class Borg {
 	public static void main(String[] args) {
@@ -16,13 +15,15 @@ public class Borg {
 		
 		Borg borgSchiff = new Borg(intArgs);
 		borgSchiff.printShip();
-		borgSchiff.versorgungsleitung(1, 1, "");
+		borgSchiff.versorgungsleitung();
 		borgSchiff.printShip();
 		
 	}
 	
 	private int groesseRahmen;
 	private int[][] arrayRaumschiff;
+	private int anzVerbindungselement = 1;
+	String saemtlicheBewegungen = "";
 	
 	
 	public Borg(int groesseRahmen) {
@@ -61,28 +62,56 @@ public class Borg {
 		}
 	}
 	
-	public void versorgungsleitung(int x, int y, String aktuelleRichtung) {
+	public void versorgungsleitung() {
+		versorgungsleitung(1, 1, "");
+	}
+	
+	private void versorgungsleitung(int x, int y, String aktuelleRichtung) {
 		char richtung = zufaelligeRichtung(aktuelleRichtung);
+		int xP = x,
+		yP = y;
 		System.out.println("Start");
 		
-		if (x == 1 && y ==1) {
-			arrayRaumschiff[x][y] = (int) '-';
-			richtung =  zufaelligeRichtung();
-		} else if ( richtung == 'k') {
-			
+		if (x == 1 && y ==1 && saemtlicheBewegungen != "") {
+			System.out.println("Die Borg ist bereit für den kampf");
 			return;
+		}
+		if (saemtlicheBewegungen == "") {
+			arrayRaumschiff[1][1] = (int) '-';
+			richtung =  zufaelligeRichtung();
+		}
+		if ( richtung == 'k') {
+			
+			if (((--anzVerbindungselement) < 0) || anzVerbindungselement >= saemtlicheBewegungen.length()) {
+				System.out.println("Die Borg ist bereit für den kampf");
+				return;
+			}
+			char letzteBewegung = saemtlicheBewegungen.charAt(anzVerbindungselement);
+			
+			while (letzteBewegung == 'o') {
+				xP ++;
+			}
+			while (letzteBewegung == 'u') {
+				xP --;
+			}
+			while (letzteBewegung == 'l') {
+				yP ++;
+			}
+			while (letzteBewegung == 'r') {
+				yP --;
+			}
+			
+			versorgungsleitung(xP, yP, "");
+			
 		} else {
 			richtung = zufaelligeRichtung();
 			System.out.println("richtung = " + richtung);
 		}
 	
-		//String aktuelleRichtung = "";
-		//aktuelleRichtung += richtung;
-		boolean bereitsbenutzt = false;
+		boolean bereitsbenutzt = false,
+		leitungPlaziert = false;
 
-		int leitung = -69,
-		xP = x,
-		yP = y;
+		int leitung = -69;
 		
 		if (richtung != 'k') {
 			for (int i = 0; i < aktuelleRichtung.length(); i++) {
@@ -101,10 +130,19 @@ public class Borg {
 					leitung = (int) '|';
 						if (fieldValid(xP - 1, yP) && fieldValid(xP - 2, yP)) {
 							arrayRaumschiff[--xP][yP] = leitung;
+							
+							if (anzVerbindungselement % 7 == 0) {
+								arrayRaumschiff[xP][yP] = 'o';
+							}
+							
 							arrayRaumschiff[--xP][yP] = leitung;
+							leitungPlaziert = true;
+							anzVerbindungselement ++;
+							saemtlicheBewegungen += 'o';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
+							leitungPlaziert = false;
 						}
 					break;
 				}
@@ -112,10 +150,19 @@ public class Borg {
 					leitung = (int) '|';
 						if (fieldValid(xP + 1, yP) && fieldValid(xP + 2, yP)) {
 							arrayRaumschiff[++xP][yP] = leitung;
+							
+							if (anzVerbindungselement % 7 == 0) {
+								arrayRaumschiff[xP][yP] = 'o';
+							}
+							
 							arrayRaumschiff[++xP][yP] = leitung;
+							leitungPlaziert = true;
+							anzVerbindungselement ++;
+							saemtlicheBewegungen += 'u';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
+							leitungPlaziert = false;
 						}
 					break;
 				}
@@ -123,10 +170,19 @@ public class Borg {
 					leitung = (int) '-';
 						if (fieldValid(xP, yP - 1) && fieldValid(xP, yP - 2)) {
 							arrayRaumschiff[xP][--yP] = leitung;
+							
+							if (anzVerbindungselement % 7 == 0) {
+								arrayRaumschiff[xP][yP] = 'o';
+							}
+							
 							arrayRaumschiff[xP][--yP] = leitung;
+							leitungPlaziert = true;
+							anzVerbindungselement++;
+							saemtlicheBewegungen += 'l';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
+							leitungPlaziert = false;
 						}
 					break;
 				}
@@ -134,22 +190,33 @@ public class Borg {
 					leitung = (int) '-';
 						if (fieldValid(xP, yP + 1) && fieldValid(xP, yP + 2)) {
 							arrayRaumschiff[xP][++yP] = leitung;
+							
+							if (anzVerbindungselement % 7 == 0) {
+								arrayRaumschiff[xP][yP] = 'o';
+							}
+							
 							arrayRaumschiff[xP][++yP] = leitung;
+							leitungPlaziert = true;
+							anzVerbindungselement++;
+							saemtlicheBewegungen += 'r';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
+							leitungPlaziert = false;
 						}
 					break;
 				}
 			}
+			
 			System.out.println(3);
 			System.out.println("aktuelleRichtung =" + aktuelleRichtung);
+			System.out.println("saemtlicheBewegungen =" + saemtlicheBewegungen);
 			System.out.println("richtung = " + richtung);
 			versorgungsleitung(xP, yP, aktuelleRichtung);
 		}
 	}
 	
-	public boolean fieldValid(int x, int y) {
+	private boolean fieldValid(int x, int y) {
 		if (arrayRaumschiff[x][y] == (int) ' ') {
 			return true;
 		}
