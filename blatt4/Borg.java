@@ -74,6 +74,7 @@ public class Borg {
 		
 		if (x == 1 & y ==1 & saemtlicheBewegungen != "") {
 			System.out.println("\n***Die Borg ist bereit für den kampf :***");
+			System.out.println("***Die finale Reihefolge der Bewegungen war : " + saemtlicheBewegungen);
 			return;
 		}
 		if (saemtlicheBewegungen == "") {
@@ -87,6 +88,7 @@ public class Borg {
 			}
 			if (anzVerbindungselement <= 0) {
 				System.out.println("\n**Die Borg ist bereit für den kampf :**");
+				System.out.println("**Die finale Reihefolge der Bewegungen war : " + saemtlicheBewegungen);
 				return;
 			}
 			char letzteBewegung = saemtlicheBewegungen.charAt(--anzVerbindungselement);
@@ -140,6 +142,13 @@ public class Borg {
 							arrayRaumschiff[--xP][yP] = leitung;
 							anzVerbindungselement ++;
 							schritte++;
+							
+							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
+													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+							}
+							
 							saemtlicheBewegungen += 'o';
 							aktuelleRichtung = "";
 						} else {
@@ -159,6 +168,13 @@ public class Borg {
 							arrayRaumschiff[++xP][yP] = leitung;
 							anzVerbindungselement ++;
 							schritte++;
+							
+							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
+													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+							}
+							
 							saemtlicheBewegungen += 'u';
 							aktuelleRichtung = "";
 						} else {
@@ -178,6 +194,13 @@ public class Borg {
 							arrayRaumschiff[xP][--yP] = leitung;
 							anzVerbindungselement++;
 							schritte++;
+							
+							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
+													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+							}
+							
 							saemtlicheBewegungen += 'l';
 							aktuelleRichtung = "";
 						} else {
@@ -197,6 +220,13 @@ public class Borg {
 							arrayRaumschiff[xP][++yP] = leitung;
 							anzVerbindungselement++;
 							schritte++;
+							
+							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
+													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+							}
+							
 							saemtlicheBewegungen += 'r';
 							aktuelleRichtung = "";
 						} else {
