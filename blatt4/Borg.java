@@ -71,8 +71,12 @@ public class Borg {
 		int xP = x,
 		yP = y;
 		System.out.println("Start");
+		System.out.println("richtung = " + richtung);
+		System.out.println("anzVerbindungselement = " + anzVerbindungselement);
+		System.out.println("xP = " + xP);
+		System.out.println("yP = " + yP);
 		
-		if (x == 1 && y ==1 && saemtlicheBewegungen != "") {
+		if (x == 1 & y ==1 & saemtlicheBewegungen != "") {
 			System.out.println("Die Borg ist bereit für den kampf");
 			return;
 		}
@@ -82,36 +86,47 @@ public class Borg {
 		}
 		if ( richtung == 'k') {
 			
-			if (((--anzVerbindungselement) < 0) || anzVerbindungselement >= saemtlicheBewegungen.length()) {
+			if (anzVerbindungselement < 1) {
 				System.out.println("Die Borg ist bereit für den kampf");
 				return;
 			}
-			char letzteBewegung = saemtlicheBewegungen.charAt(anzVerbindungselement);
+			if (anzVerbindungselement > saemtlicheBewegungen.length()) {
+				int diff = anzVerbindungselement - saemtlicheBewegungen.length();
+				anzVerbindungselement -= diff;
+			}
+			char letzteBewegung = saemtlicheBewegungen.charAt(--anzVerbindungselement);
+			System.out.println("LETZE BEWEGUNG = " + letzteBewegung);
+			switch (letzteBewegung) {
+				case 'o' : {
+					xP += 2;
+				}
+				case 'u' : {
+					xP -= 2;
+				}
+				case 'l' : {
+					yP += 2;
+				}
+				case 'r' : {
+					yP -= 2;
+				}
+			}
 			
-			while (letzteBewegung == 'o') {
-				xP ++;
-			}
-			while (letzteBewegung == 'u') {
-				xP --;
-			}
-			while (letzteBewegung == 'l') {
-				yP ++;
-			}
-			while (letzteBewegung == 'r') {
-				yP --;
-			}
-			
+			System.out.println("\n\nWeg ZURÜCK\n\n");
+			System.out.println("anzVerbindungselement = " + anzVerbindungselement);
+			System.out.println("xP = " + xP);
+			System.out.println("yP = " + yP);
 			versorgungsleitung(xP, yP, "");
-			
-		} else {
-			richtung = zufaelligeRichtung();
-			System.out.println("richtung = " + richtung);
 		}
+		
+		richtung = zufaelligeRichtung();
+		System.out.println("richtung = " + richtung);
 	
 		boolean bereitsbenutzt = false,
 		leitungPlaziert = false;
 
 		int leitung = -69;
+		xP = x;
+		yP = y;
 		
 		if (richtung != 'k') {
 			for (int i = 0; i < aktuelleRichtung.length(); i++) {
@@ -217,7 +232,11 @@ public class Borg {
 	}
 	
 	private boolean fieldValid(int x, int y) {
-		if (arrayRaumschiff[x][y] == (int) ' ') {
+		if ((x >= this.groesseRahmen + 2) || (y >= this.groesseRahmen + 2)) {
+			return false;
+		} else if (x < 0 || y < 0) {
+			return false;
+		} else if (arrayRaumschiff[x][y] == (int) ' ') {
 			return true;
 		}
 		return false;
@@ -228,9 +247,9 @@ public class Borg {
 		
 		if (zufallZahl < 25) {
 			return 'o';
-		} else if (zufallZahl >= 25 && zufallZahl <50) {
+		} else if (zufallZahl >= 25 & zufallZahl <50) {
 			return 'u';
-		} else if (zufallZahl >= 50 && zufallZahl < 75) {
+		} else if (zufallZahl >= 50 & zufallZahl < 75) {
 			return 'l';
 		} else {
 			return 'r';
@@ -271,7 +290,7 @@ public class Borg {
 			case 1 : {
 				if (zufallZahl < 33) {
 					return freieRichtungen[0];
-				} else if (zufallZahl >= 33 && zufallZahl <66) {
+				} else if (zufallZahl >= 33 & zufallZahl <66) {
 					return freieRichtungen[1];
 				} else {
 					return freieRichtungen[2];
