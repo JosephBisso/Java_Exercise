@@ -30,7 +30,7 @@ public class Borg {
 	public Borg(int groesseRahmen) {
 		this.groesseRahmen = groesseRahmen;
 		
-		int sizeRahmen = groesseRahmen + 2;
+		int sizeRahmen = groesseRahmen;
 		arrayRaumschiff = new int[sizeRahmen][sizeRahmen];
 		
 		for (int i = 0; i < sizeRahmen; i++) {
@@ -71,14 +71,9 @@ public class Borg {
 		char richtung = zufaelligeRichtung(aktuelleRichtung);
 		int xP = x,
 		yP = y;
-		System.out.println("Start");
-		System.out.println("richtung (start)= " + richtung);
-		System.out.println("anzVerbindungselement (start)= " + anzVerbindungselement);
-		System.out.println("xP (start)= " + xP);
-		System.out.println("yP (start)= " + yP);
 		
 		if (x == 1 & y ==1 & saemtlicheBewegungen != "") {
-			System.out.println("Die Borg ist bereit für den kampf");
+			System.out.println("\n***Die Borg ist bereit für den kampf :***");
 			return;
 		}
 		if (saemtlicheBewegungen == "") {
@@ -91,11 +86,10 @@ public class Borg {
 				anzVerbindungselement -= diff;
 			}
 			if (anzVerbindungselement <= 0) {
-				System.out.println("Die Borg ist bereit für den kampf");
+				System.out.println("\n**Die Borg ist bereit für den kampf :**");
 				return;
 			}
 			char letzteBewegung = saemtlicheBewegungen.charAt(--anzVerbindungselement);
-			System.out.println("***LETZE BEWEGUNG = " + letzteBewegung + "***");
 			switch (letzteBewegung) {
 				case 'o' : {
 					xP = xP + 2;
@@ -113,19 +107,12 @@ public class Borg {
 					yP = yP - 2;
 					break;
 				}
-			}
+			}	
 			
-			System.out.println("\n***\nWeg ZURÜCK\n***\n");
-			System.out.println("anzVerbindungselement (zurück)= " + anzVerbindungselement);
-			System.out.println("xP (zurück)= " + xP);
-			System.out.println("yP (zurück)= " + yP);
 			versorgungsleitung(xP, yP, "");
-		}
+		}	
 		
-		System.out.println("richtung = " + richtung);
-	
-		boolean bereitsbenutzt = false,
-		leitungPlaziert = false;
+		boolean bereitsbenutzt = false;
 
 		int leitung = -69;
 		xP = x;
@@ -135,14 +122,11 @@ public class Borg {
 			for (int i = 0; i < aktuelleRichtung.length(); i++) {
 				if (aktuelleRichtung.charAt(i) == richtung) {
 					bereitsbenutzt = true;
-					System.out.println(1);
 				}
 			}
 			if (!bereitsbenutzt) {
 				aktuelleRichtung += richtung;
-				System.out.println(2);
 			}
-			System.out.println("aktuelleRichtung =" + aktuelleRichtung);
 			switch (richtung) {
 				case 'o' : {
 					leitung = (int) '|';
@@ -154,14 +138,12 @@ public class Borg {
 							}
 							
 							arrayRaumschiff[--xP][yP] = leitung;
-							leitungPlaziert = true;
 							anzVerbindungselement ++;
 							schritte++;
 							saemtlicheBewegungen += 'o';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
-							leitungPlaziert = false;
 						}
 					break;
 				}
@@ -175,14 +157,12 @@ public class Borg {
 							}
 							
 							arrayRaumschiff[++xP][yP] = leitung;
-							leitungPlaziert = true;
 							anzVerbindungselement ++;
 							schritte++;
 							saemtlicheBewegungen += 'u';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
-							leitungPlaziert = false;
 						}
 					break;
 				}
@@ -196,14 +176,12 @@ public class Borg {
 							}
 							
 							arrayRaumschiff[xP][--yP] = leitung;
-							leitungPlaziert = true;
 							anzVerbindungselement++;
 							schritte++;
 							saemtlicheBewegungen += 'l';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
-							leitungPlaziert = false;
 						}
 					break;
 				}
@@ -217,31 +195,23 @@ public class Borg {
 							}
 							
 							arrayRaumschiff[xP][++yP] = leitung;
-							leitungPlaziert = true;
 							anzVerbindungselement++;
 							schritte++;
 							saemtlicheBewegungen += 'r';
 							aktuelleRichtung = "";
 						} else {
 							richtung = zufaelligeRichtung(aktuelleRichtung);
-							leitungPlaziert = false;
 						}
 					break;
 				}
 			}
 			
-			System.out.println(3);
-			System.out.println("aktuelleRichtung (end)=" + aktuelleRichtung);
-			System.out.println("anzVerbindungselement (end)= " + anzVerbindungselement);
-			System.out.println("schritte (end)= " + schritte);
-			System.out.println("saemtlicheBewegungen (end)=" + saemtlicheBewegungen);
-			System.out.println("richtung (end)= " + richtung);
 			versorgungsleitung(xP, yP, aktuelleRichtung);
 		}
 	}
 	
 	private boolean fieldValid(int x, int y) {
-		if ((x >= this.groesseRahmen + 2) || (y >= this.groesseRahmen + 2)) {
+		if ((x >= this.groesseRahmen) || (y >= this.groesseRahmen)) {
 			return false;
 		} else if (x < 0 || y < 0) {
 			return false;
@@ -287,8 +257,6 @@ public class Borg {
 		int index = 0;
 		for (char richtung : richtungen.toCharArray()) {
 			if (Character.isLetter(richtung)) {
-				System.out.println(4);
-				System.out.println("richtung = " + richtung);
 				freieRichtungen[index++] = richtung;
 			}
 		}
