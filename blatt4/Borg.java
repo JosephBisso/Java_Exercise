@@ -86,14 +86,13 @@ public class Borg {
 			richtung =  zufaelligeRichtung();
 		}
 		if ( richtung == 'k') {
-			
-			if (anzVerbindungselement < 1) {
-				System.out.println("Die Borg ist bereit für den kampf");
-				return;
-			}
 			if (anzVerbindungselement > saemtlicheBewegungen.length()) {
 				int diff = anzVerbindungselement - saemtlicheBewegungen.length();
 				anzVerbindungselement -= diff;
+			}
+			if (anzVerbindungselement <= 0) {
+				System.out.println("Die Borg ist bereit für den kampf");
+				return;
 			}
 			char letzteBewegung = saemtlicheBewegungen.charAt(--anzVerbindungselement);
 			System.out.println("***LETZE BEWEGUNG = " + letzteBewegung + "***");
