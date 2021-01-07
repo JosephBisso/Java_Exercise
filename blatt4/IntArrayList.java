@@ -1,5 +1,7 @@
 import java.util.*;
 
+/** Klasse Borg aus Aufgabe 10
+*/
 public class IntArrayList implements List<Integer> {
 
 	public static void main(String[] args) {
@@ -22,10 +24,15 @@ public class IntArrayList implements List<Integer> {
 
 	private int[] intArrayList;
 
+/** Konstruktor der Klasse IntArrayList. Initialisiert das Array
+*/
 	public IntArrayList() {
 		intArrayList = new int[0];
 	}
 
+/** Methode zur Ausgabe des Arrays
+  * @return die Werte des Arrays als String
+*/
 	public String toString() {		
 		String stringArrayList = "";
 		int size = size();
@@ -41,11 +48,17 @@ public class IntArrayList implements List<Integer> {
 		}
 		return stringArrayList;
 	}
-	
+
+/** Methode zur Ausgabe der Länge des Arrays
+  * @return die Länge des Arrays
+*/	
 	public int size() {
 		return intArrayList.length;
 	}
-	
+
+/** Methode zum Überprüfen, ob es Werte in das Array gibt
+  * @return true, wenn leer und false wenn nicht
+*/	
 	public boolean isEmpty() {
 		if (intArrayList == null) {
 			return true;
@@ -61,7 +74,11 @@ public class IntArrayList implements List<Integer> {
 			return false;
 		}
 	}
-	
+
+/** Methode zum Überprüfen, ob es einen Wert in das Array gibt
+  * @param o ist der Wert, den gerüft werden soll
+  * @return true, wenn es diesen Wert gibt und false wenn nicht
+*/	
 	public boolean contains(Object o) {
 		if (o == null) {
 			return false;
@@ -78,7 +95,11 @@ public class IntArrayList implements List<Integer> {
 		}
 		return false;
 	}
-	
+
+/** Methode zum Hinzufügen eines Wertes in das Array
+  * @param value ist der Wert, der hinzugefügt werden soll
+  * @return true
+*/	
 	public boolean add(Integer value) {
 		int size = size();
 		int[] copyIntArrayList = new int[size];
@@ -86,7 +107,7 @@ public class IntArrayList implements List<Integer> {
 			copyIntArrayList[i] = intArrayList[i];
 		}
 		
-		intArrayList = new int[size+1];
+		intArrayList = new int[size + 1];
 		for (int i = 0; i < size; i++) {
 			intArrayList[i] = copyIntArrayList[i];
 		}
@@ -94,7 +115,11 @@ public class IntArrayList implements List<Integer> {
 		
 		return true;
 	}
-	
+
+/** Methode zum Hinzufügen eines Wertes in eine gewünschte Stelle des Arrays
+  * @param index ist der Index des Wertes, der hinzugefügt werden soll
+  * @param value ist der Wert, der hinzugefügt werden soll
+*/	
 	public void add(int index, Integer value) {
 		int size = size();
 		if (index >= size) {
@@ -106,7 +131,7 @@ public class IntArrayList implements List<Integer> {
 			copyIntArrayList[i] = intArrayList[i];
 		}
 		
-		intArrayList = new int[size+1];
+		intArrayList = new int[size + 1];
 		int j = 0;
 		for (int i = 0; i < size; i++) {
 			if (i == index) {
@@ -117,7 +142,12 @@ public class IntArrayList implements List<Integer> {
 		}
 		intArrayList[index] = value;
 	}
-	
+
+/** Methode zum Entfernen eines Wertes aus dem Array
+  * @param value ist der Wert, der hinzugefügt werden soll
+  * @return 0 wenn es diesen Wert nicht gibt ,
+  * und 1 wenn es diesen Wert gibt und es erfolgreich entfernt wurde
+*/	
 	public Integer remove(int value) {
 		if (!contains(value)) {
 			System.out.println("Das zu entfernende Element existiert nicht.");
@@ -128,7 +158,7 @@ public class IntArrayList implements List<Integer> {
 			int[] copyIntArrayList = new int[reducedSize];
 			int j = 0;
 			for (int i = 0; i < reducedSize; i++) {
-				if(i == index){
+				if (i == index) {
 					++j;
 				}
 				copyIntArrayList[i] = intArrayList[j];
@@ -142,7 +172,9 @@ public class IntArrayList implements List<Integer> {
 			return 1;
 		}
 	}
-	
+
+/** Methode zum Löschen des Arrays
+*/	
 	public void clear() {
 		for (int i = 0; i < size(); i++) {
 			intArrayList[i] = 0;
@@ -150,7 +182,12 @@ public class IntArrayList implements List<Integer> {
 		intArrayList = new int[0];
 		
 	}
-	
+
+/** get-Methode des Arrays
+  * @param value ist der Wert, dessen index geget werden soll
+  * @return -69, falss es diesen Wert nicht gibt, 
+  * oder der Index des Wert, falls doch
+*/		
 	public Integer get(int value) {
 		if (!contains(value)) {
 			return -69;
@@ -163,62 +200,124 @@ public class IntArrayList implements List<Integer> {
 		}
 		return -69;
 	}
-	
-	public List<Integer> subList(int fromIndex, int toIndex){
+
+/** Dummy-Methode
+  * @param fromIndex formIndex
+  * @param toIndex toIndex
+  * @return this
+*/
+	public List<Integer> subList(int fromIndex, int toIndex) {
 		return this;
 	}
-	
-	public ListIterator<Integer> listIterator(){
+
+/** Dummy-Methode
+  * @return null null
+*/	
+	public ListIterator<Integer> listIterator() {
 		return null;
 	}
-	public ListIterator<Integer> listIterator(int index){
+
+/** Dummy-Methode
+  * @param index index
+  * @return null null
+*/	
+	public ListIterator<Integer> listIterator(int index) {
 		return null;
 	}
-	
+
+/** Dummy-Methode
+  * @param o o
+  * @return -69 nice
+*/	
 	public int lastIndexOf(Object o) {
 		return -69;
 	}
-	
+
+/** Dummy-Methode
+  *@param o o
+  * @return -69 nice
+*/	
 	public int indexOf(Object o) {
 		return -69;
 	}
-	
+
+/** Dummy-Methode
+  * @param index index
+  * @param element element
+  * @return -69 nice
+*/	
 	public Integer set(int index, Integer element) {
 		return -69;
 	}
-	
+
+/** Dummy-Methode 
+  * @param c c
+  * @return false false
+*/	
 	public boolean retainAll(Collection<?> c) {
 		return false;
 	}
-	
+
+/** Dummy-Methode
+  * @param c c
+  * @return false false
+*/	
 	public boolean removeAll(Collection<?> c) {
 		return false;
 	}
-	
+
+/** Dummy-Methode
+  * @param c c
+  * @return false false
+*/	
 	public boolean addAll(Collection<? extends Integer> c) {
 		return false;
 	}
-	
+
+/** Dummy-Methode
+  * @param index index
+  * @param c c
+  * @return false false
+*/	
 	public boolean addAll(int index, Collection<? extends Integer> c) {
 		return false;
 	}
-	
+
+/** Dummy-Methode
+  * @param c c
+  * @return false false
+*/	
 	public boolean containsAll(Collection<?> c) {
 		return false;
 	}
-	
+
+/** Dummy-Methode
+  * @param o o
+  * @return false false
+*/		
 	public boolean remove(Object o) {
 		return false;
 	}
-	
+
+/** Dummy-Methode
+  * @param <Integer> keine Ahnung
+  * @param i i
+  * @return null null
+*/		
 	public <Integer> Integer[] toArray(Integer[] i) {
 		return null;
 	}
-	
+
+/** Dummy-Methode
+  * @return null null
+*/	
 	public Object[] toArray() {
 		return null;
 	}
-	
+
+/** Dummy-Methode
+  * @return null null
+*/	
 	public Iterator<Integer> iterator() {
 		return null;
 	}
