@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+/** Klasse Borg aus Aufgabe 11
+*/
 public class Borg {
 	public static void main(String[] args) {
 		
@@ -22,11 +24,13 @@ public class Borg {
 	
 	private int groesseRahmen;
 	private int[][] arrayRaumschiff;
-	private int anzVerbindungselement = 1;
-	private int schritte = 1;
-	String saemtlicheBewegungen = "";
+	private int anzVerbindungselement = 1;    //Dient als Indix für Leitungen
+	private int schritte = 1;                 //Zählt die Schritte
+	private String saemtlicheBewegungen = ""; //Speichert die Richtungen, die genommen wurde in Reihefolge
 	
-	
+/** Konstruktor der Klasse Borg. Erstellt ein Rahmen der gewünschte Größe
+  * @param groesseRahmen 
+*/
 	public Borg(int groesseRahmen) {
 		this.groesseRahmen = groesseRahmen;
 		
@@ -40,16 +44,18 @@ public class Borg {
 						arrayRaumschiff[i][j] = (int) ' ';
 					} else {
 						arrayRaumschiff[i][0] = (int) '|';
-						arrayRaumschiff[i][sizeRahmen-1] = (int) '|';
+						arrayRaumschiff[i][sizeRahmen - 1] = (int) '|';
 					} 
 				} else {
 					arrayRaumschiff[0][j] = (int) '-';
-					arrayRaumschiff[sizeRahmen-1][j] = (int) '-';
+					arrayRaumschiff[sizeRahmen - 1][j] = (int) '-';
 				}
 			}
 		}
 	}
-	
+
+/** Methode zur Ausgabe des Borg
+*/
 	public void printShip() {
 		int size = arrayRaumschiff.length;
 		String[] ship = new String[size];
@@ -57,27 +63,36 @@ public class Borg {
 		for (int i = 0; i < size; i++) {
 			ship[i] = "";
 			for (int j = 0; j < size; j++) {
-			ship[i] += ((char) arrayRaumschiff[i][j]) + " "; 
+				ship[i] += ((char) arrayRaumschiff[i][j]) + " "; 
 			}
 			System.out.println(ship[i]);
 		}
 	}
-	
+
+/** Methode zum Erstellen der Versorgungsleitung des Borges. Die Hauptversorgung
+  * beginnt an Koordinaten (1,1) und alle Richtungen sind zu prüfen
+*/
 	public void versorgungsleitung() {
 		versorgungsleitung(1, 1, "");
 	}
-	
+
+/** Rekursive Methode zum Erstellen der Versorgungsleitung des Borges. 
+  * @param x ist die x Koordinate
+  * @param y ist die y Koordinate
+  * @param aktuelleRichtung ist die Richtung, in die keine Leitung in der vorherigen rekursiven Aufruf plaziert
+  * werden könnte.  
+*/	
 	private void versorgungsleitung(int x, int y, String aktuelleRichtung) {
 		char richtung = zufaelligeRichtung(aktuelleRichtung);
 		int xP = x,
-		yP = y;
+			yP = y;
 		
-		if (x == 1 & y ==1 & saemtlicheBewegungen != "") {
+		if (x == 1 & y == 1 & !saemtlicheBewegungen.equals("")) {
 			System.out.println("\n***Die Borg ist bereit für den kampf :***");
 			System.out.println("***Die finale Reihefolge der Bewegungen war : " + saemtlicheBewegungen);
 			return;
 		}
-		if (saemtlicheBewegungen == "") {
+		if (saemtlicheBewegungen.equals("")) {
 			arrayRaumschiff[1][1] = (int) '-';
 			richtung =  zufaelligeRichtung();
 		}
@@ -132,106 +147,106 @@ public class Borg {
 			switch (richtung) {
 				case 'o' : {
 					leitung = (int) '|';
-						if (fieldValid(xP - 1, yP) & fieldValid(xP - 2, yP)) {
-							arrayRaumschiff[--xP][yP] = leitung;
-							
-							if (schritte % 7 == 0) {
-								arrayRaumschiff[xP][yP] = 'o';
-							}
-							
-							arrayRaumschiff[--xP][yP] = leitung;
-							anzVerbindungselement ++;
-							schritte++;
-							
-							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
-								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
-													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
-								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
-							}
-							
-							saemtlicheBewegungen += 'o';
-							aktuelleRichtung = "";
-						} else {
-							richtung = zufaelligeRichtung(aktuelleRichtung);
+					if (fieldValid(xP - 1, yP) & fieldValid(xP - 2, yP)) {
+						arrayRaumschiff[--xP][yP] = leitung;
+						
+						if (schritte % 7 == 0) {
+							arrayRaumschiff[xP][yP] = 'o';
 						}
+							
+						arrayRaumschiff[--xP][yP] = leitung;
+						anzVerbindungselement++;
+						schritte++;
+							
+						if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+							System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen  
+												+ " . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+							saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+						}
+							
+						saemtlicheBewegungen += 'o';
+						aktuelleRichtung = "";
+					} else {
+						richtung = zufaelligeRichtung(aktuelleRichtung);
+					}
 					break;
 				}
 				case 'u' : {
 					leitung = (int) '|';
-						if (fieldValid(xP + 1, yP) & fieldValid(xP + 2, yP)) {
-							arrayRaumschiff[++xP][yP] = leitung;
-							
-							if (schritte % 7 == 0) {
-								arrayRaumschiff[xP][yP] = 'o';
-							}
-							
-							arrayRaumschiff[++xP][yP] = leitung;
-							anzVerbindungselement ++;
-							schritte++;
-							
-							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
-								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
-													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
-								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
-							}
-							
-							saemtlicheBewegungen += 'u';
-							aktuelleRichtung = "";
-						} else {
-							richtung = zufaelligeRichtung(aktuelleRichtung);
+					if (fieldValid(xP + 1, yP) & fieldValid(xP + 2, yP)) {
+						arrayRaumschiff[++xP][yP] = leitung;
+						
+						if (schritte % 7 == 0) {
+							arrayRaumschiff[xP][yP] = 'o';
 						}
+						
+						arrayRaumschiff[++xP][yP] = leitung;
+						anzVerbindungselement++;
+						schritte++;
+							
+						if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+							System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen  
+												+ " . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+							saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+						}
+						
+						saemtlicheBewegungen += 'u';
+						aktuelleRichtung = "";
+					} else {
+						richtung = zufaelligeRichtung(aktuelleRichtung);
+					}
 					break;
 				}
 				case 'l' : {
 					leitung = (int) '-';
-						if (fieldValid(xP, yP - 1) & fieldValid(xP, yP - 2)) {
-							arrayRaumschiff[xP][--yP] = leitung;
-							
-							if (schritte % 7 == 0) {
-								arrayRaumschiff[xP][yP] = 'o';
-							}
-							
-							arrayRaumschiff[xP][--yP] = leitung;
-							anzVerbindungselement++;
-							schritte++;
-							
-							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
-								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
-													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
-								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
-							}
-							
-							saemtlicheBewegungen += 'l';
-							aktuelleRichtung = "";
-						} else {
-							richtung = zufaelligeRichtung(aktuelleRichtung);
+					if (fieldValid(xP, yP - 1) & fieldValid(xP, yP - 2)) {
+						arrayRaumschiff[xP][--yP] = leitung;
+						
+						if (schritte % 7 == 0) {
+							arrayRaumschiff[xP][yP] = 'o';
 						}
+						
+						arrayRaumschiff[xP][--yP] = leitung;
+						anzVerbindungselement++;
+						schritte++;
+						
+						if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+							System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen  
+												+ " . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+							saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+						}
+						
+						saemtlicheBewegungen += 'l';
+						aktuelleRichtung = "";
+					} else {
+						richtung = zufaelligeRichtung(aktuelleRichtung);
+					}
 					break;
 				}
 				case 'r' : {
 					leitung = (int) '-';
-						if (fieldValid(xP, yP + 1) & fieldValid(xP, yP + 2)) {
-							arrayRaumschiff[xP][++yP] = leitung;
-							
-							if (schritte % 7 == 0) {
-								arrayRaumschiff[xP][yP] = 'o';
-							}
-							
-							arrayRaumschiff[xP][++yP] = leitung;
-							anzVerbindungselement++;
-							schritte++;
-							
-							if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
-								System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen + 
-													" . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
-								saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
-							}
-							
-							saemtlicheBewegungen += 'r';
-							aktuelleRichtung = "";
-						} else {
-							richtung = zufaelligeRichtung(aktuelleRichtung);
+					if (fieldValid(xP, yP + 1) & fieldValid(xP, yP + 2)) {
+						arrayRaumschiff[xP][++yP] = leitung;
+						
+						if (schritte % 7 == 0) {
+							arrayRaumschiff[xP][yP] = 'o';
 						}
+						
+						arrayRaumschiff[xP][++yP] = leitung;
+						anzVerbindungselement++;
+						schritte++;
+							
+						if (saemtlicheBewegungen.length() >= anzVerbindungselement) {
+							System.out.println("\n*Die Reihefolge der Bewegungen war : " + saemtlicheBewegungen  
+												+ " . In allen Richtung geht's nicht mehr. Es wird zurückgegangen");
+							saemtlicheBewegungen = saemtlicheBewegungen.substring(0, anzVerbindungselement - 1);
+						}
+						
+						saemtlicheBewegungen += 'r';
+						aktuelleRichtung = "";
+					} else {
+						richtung = zufaelligeRichtung(aktuelleRichtung);
+					}
 					break;
 				}
 			}
@@ -239,7 +254,11 @@ public class Borg {
 			versorgungsleitung(xP, yP, aktuelleRichtung);
 		}
 	}
-	
+
+/** Methode zum Prüfen, ob ein Platz frei ist. 
+  * @param x ist die x Koordinate des zu prüfenden Platzes
+  * @param y ist die y Koordinate des zu prüfenden Platzes
+*/	
 	private boolean fieldValid(int x, int y) {
 		if ((x >= this.groesseRahmen) || (y >= this.groesseRahmen)) {
 			return false;
@@ -250,13 +269,16 @@ public class Borg {
 		}
 		return false;
 	}
-	
+
+/** Methode um eine zufällige Richtung zu generieren. 
+  * @return eine zufällige Richtung
+*/	
 	private char zufaelligeRichtung() {
-		int zufallZahl = (int) (Math.random() * 100) + 1 ;
+		int zufallZahl = (int) (Math.random() * 100) + 1;
 		
 		if (zufallZahl < 25) {
 			return 'o';
-		} else if (zufallZahl >= 25 & zufallZahl <50) {
+		} else if (zufallZahl >= 25 & zufallZahl < 50) {
 			return 'u';
 		} else if (zufallZahl >= 50 & zufallZahl < 75) {
 			return 'l';
@@ -264,7 +286,12 @@ public class Borg {
 			return 'r';
 		}
 	}
-	
+
+/** Methode um eine zufällige Richtung zu generieren, mit Ausnahme von zuvor blockierten Richtungen
+  * @param stringBlockierteRichtungen ist ein maximum 4-stelliges String, die die Richtungen enthält, in die keine Leitung
+  * plaziert werden darf.
+  * @return ggf eine zufällige nicht blockierte Richtung
+*/	
 	private char zufaelligeRichtung(String stringBlockierteRichtungen) {
 		
 		if (stringBlockierteRichtungen.length() == 0) {
@@ -276,7 +303,7 @@ public class Borg {
 		String richtungen = "oulr";
 		int anzBlockierteRichtungen = stringBlockierteRichtungen.length();
 		
-		for(int j = 0; j < anzBlockierteRichtungen; j++) {
+		for (int j = 0; j < anzBlockierteRichtungen; j++) {
 			for (char richtung : richtungen.toCharArray()) {
 				if (richtung == stringBlockierteRichtungen.charAt(j)) {
 					richtungen = richtungen.replace(richtung, '+');
@@ -291,13 +318,13 @@ public class Borg {
 			}
 		}
 		
-		int zufallZahl = (int) (Math.random() * 100) + 1 ;
+		int zufallZahl = (int) (Math.random() * 100) + 1;
 		
 		switch (anzBlockierteRichtungen) {
 			case 1 : {
 				if (zufallZahl < 33) {
 					return freieRichtungen[0];
-				} else if (zufallZahl >= 33 & zufallZahl <66) {
+				} else if (zufallZahl >= 33 & zufallZahl < 66) {
 					return freieRichtungen[1];
 				} else {
 					return freieRichtungen[2];
