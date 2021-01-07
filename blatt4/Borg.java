@@ -26,13 +26,18 @@ public class Borg {
 	private int[][] arrayRaumschiff;
 	private int anzVerbindungselement = 1;    //Dient als Indix für Leitungen
 	private int schritte = 1;                 //Zählt die Schritte
-	private String saemtlicheBewegungen = ""; //Speichert die Richtungen, die genommen wurde in Reihefolge
+	private String saemtlicheBewegungen = ""; //Speichert die Richtungen, die genommen wurden in Reihefolge
 	
-/** Konstruktor der Klasse Borg. Erstellt ein Rahmen der gewünschte Größe
-  * @param groesseRahmen 
+/** Konstruktor der Klasse Borg. Erstellt einen Rahmen der gewünschten Größe
+  * @param groesseRahmen ist die Größe des Rahmens des Borges
 */
 	public Borg(int groesseRahmen) {
 		this.groesseRahmen = groesseRahmen;
+		
+		if (groesseRahmen <= 2) {
+			System.out.println("\n!!!Die Groesse ist viel zu KLEIN. Die Groesse wird auf 3 (MINDESTGROESSE) gesetzt!!!");
+			groesseRahmen = 3;
+		} 
 		
 		int sizeRahmen = groesseRahmen;
 		arrayRaumschiff = new int[sizeRahmen][sizeRahmen];
@@ -54,7 +59,7 @@ public class Borg {
 		}
 	}
 
-/** Methode zur Ausgabe des Borg
+/** Methode zur Ausgabe des Borges
 */
 	public void printShip() {
 		int size = arrayRaumschiff.length;
@@ -251,6 +256,11 @@ public class Borg {
 				}
 			}
 			
+			if (groesseRahmen <= 4) {
+				System.out.println("\n!!!Ihre Borg ist viel zu KLEIN, um eine Versorgungsleitung zu erstellen." 
+									+ "\nDie Borg muss MINDESTENS die GROESSE 5 haben!!!");
+				return;
+			}
 			versorgungsleitung(xP, yP, aktuelleRichtung);
 		}
 	}
