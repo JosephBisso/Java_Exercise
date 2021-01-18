@@ -34,7 +34,12 @@ public class ZahlLeser {
 			System.out.println("\n" + ae.getMessage() + "*** Es wird die Defautl-Zahl " + zahl + " initialisiert ***");
 		}
 		
-		System.out.println("\n20 divisiert durch " + zahl + " gleich " + twentyBy(zahl));
+		try {
+			int ergebnis = twentyBy(zahl);
+			System.out.println("\n20 dividiert durch " + zahl + " gleich " + ergebnis);
+		} catch (ArithmeticException e) {
+			System.out.println("\nßßß Keine Division durch Null möglich ßßß");
+		}
 	}
 
 /** Methode zum Prüfen ob die Zahl größer als 10 ist. 
@@ -50,13 +55,7 @@ public class ZahlLeser {
   * @param zahl ist zu dividierende Zahl
 */
 	public static int twentyBy (int zahl) {
-		int ergebnis = 0;
-		try {
-			ergebnis = 20 / zahl;
-		} catch (ArithmeticException e) {
-			System.out.println("\nßßß Keine Division durch Null ßßß");
-		}
-		return ergebnis;
+		return 20 / zahl;
 	} 
 
 }
