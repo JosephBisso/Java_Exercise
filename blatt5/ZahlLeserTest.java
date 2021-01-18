@@ -1,8 +1,11 @@
-public classe ZahlLeserTest {
+import org . junit . Test ;
+import static org . junit . Assert .*;
+
+public class ZahlLeserTest {
 	
-	@Test public twentyByTest() {
-		assertEquals(3, twentyBy(6));
-		assertEquals(5, twentyBy(4));
-		assertEquals(10, twentyBy(2));
+	@Test public void twentyByTest() {
+		assertEquals(3, ZahlLeser.twentyBy(6));
+		assertEquals(5, ZahlLeser.twentyBy(4));
+		assertEquals(10, ZahlLeser.twentyBy(2));
 	}
 }
