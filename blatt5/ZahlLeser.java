@@ -6,36 +6,35 @@ public class ZahlLeser {
 	
 	public static void main (String[] args) {
 		
+		int zahl = 0;
 		try {
 			
 			Scanner sc = new Scanner(args[0]);
-			int zahl = sc.nextInt();
+			zahl = sc.nextInt();
 			
-			//Es wird jetzt geprüft ob die Zahl kleiner als 10 ist
 			istKleinerAlsZehn(zahl);
 			
 			System.out.println("\nSie haben die Zahl " + zahl + " eingegeben");
 		
-		//Falls nichts eingegeben wurde
 		} catch (ArrayIndexOutOfBoundsException abe) {
 			
-			int zahl = 69;
+			zahl = 3;
 			System.out.println("\n§§§ Sie haben vergessen eine Zahl einzugeben. " 
 								+ "Es wird die NICE Defautl-Zahl " + zahl + " initialisiert §§§");
 								
-		//Falls ein String oder ander Zeichen eingegeben wurde
 		} catch (InputMismatchException i) {
 			
-			int zahl = 420;
+			zahl = 4;
 			System.out.println("\n$$$ Das von Ihnen eingegeben Zeichen ist keine Zahl. Nur Zahlen sind erlaubt!. " 
 								+ "Es wird die FANTASTIC Defautl-Zahl " + zahl + " initialisiert $$$");
-								
-		//Falls eingegeben Zahl groesser als 10 ist						
+													
 		} catch (ArithmeticException ae) {
 			
-			int zahl = 10;
+			zahl = 10;
 			System.out.println("\n" + ae.getMessage() + "*** Es wird die Defautl-Zahl " + zahl + " initialisiert ***");
 		}
+		
+		System.out.println("\n20 divisiert durch " + zahl + " gleich " + twentyBy(zahl));
 	}
 
 /** Methode zum Prüfen ob die Zahl größer als 10 ist. 
@@ -46,4 +45,18 @@ public class ZahlLeser {
 		if (zahl <= 10) return ;	
 		throw new ArithmeticException("### Zahl ist groesser als 10 ###\n");
 	} 
+	
+/** Methode aus Aufgabe 13. Es wird die Zahl durch 20 dividiert 
+  * @param zahl ist zu dividierende Zahl
+*/
+	public static int twentyBy (int zahl) {
+		int ergebnis = 0;
+		try {
+			ergebnis = 20 / zahl;
+		} catch (ArithmeticException e) {
+			System.out.println("\nßßß Keine Division durch Null ßßß");
+		}
+		return ergebnis;
+	} 
+
 }
