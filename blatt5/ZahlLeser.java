@@ -28,10 +28,10 @@ public class ZahlLeser {
 			System.out.println("\n$$$ Das von Ihnen eingegeben Zeichen ist keine Zahl. Nur Zahlen sind erlaubt!. " 
 								+ "Es wird die FANTASTIC Defautl-Zahl " + zahl + " initialisiert $$$");
 													
-		} catch (ArithmeticException ae) {
+		} catch (IllegalArgumentException ie) {
 			
 			zahl = 10;
-			System.out.println("\n" + ae.getMessage() + "*** Es wird die Defautl-Zahl " + zahl + " initialisiert ***");
+			System.out.println("\n" + ie.getMessage() + "*** Es wird die Defautl-Zahl " + zahl + " initialisiert ***");
 		}
 		
 		try {
@@ -48,7 +48,7 @@ public class ZahlLeser {
 */
 	public static void istKleinerAlsZehn (int zahl) {
 		if (zahl <= 10) return ;	
-		throw new ArithmeticException("### Zahl ist groesser als 10 ###\n");
+		throw new IllegalArgumentException("### Zahl ist groesser als 10 ###\n");
 	} 
 	
 /** Methode aus Aufgabe 13. Es wird die Zahl durch 20 dividiert 
