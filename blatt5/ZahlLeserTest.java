@@ -9,3 +9,7 @@ public class ZahlLeserTest {
 		assertEquals(10, ZahlLeser.twentyBy(2));
 	}
 }
+
+/** Der notwendige Befehl, um alle Test auszuführen ist:
+  * ./gradlew test
+*/
